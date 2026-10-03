@@ -63,11 +63,95 @@
   <!-- E02 corregido: contenido principal en main, destino del enlace "Saltar al contenido" -->
   <main id="contenido" class="contenido">
     <div class="contenedor">
+      <!-- E14 corregido: migas de pan que indican dónde está el usuario -->
+      <nav class="migas" aria-label="Migas de pan">
+        <ol>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tramites.html" aria-current="page">Trámites</a></li>
+        </ol>
+      </nav>
+
       <!-- E02 corregido: un solo h1 por página -->
       <h1>Trámites y servicios</h1>
       <p class="intro">Estos son los trámites que puedes adelantar ante la Alcaldía de Valleclaro. Todos los datos son ficticios.</p>
 
-      <!-- Contenido pendiente: se completa en la fase 3 -->
+      <!-- Mejora (Nielsen 7): filtro de texto; sin JavaScript queda oculto y se ven todos los trámites -->
+      <div class="filtro" id="filtro-tramites" hidden>
+        <label for="buscar-tramite">Buscar trámite</label>
+        <p id="ayuda-buscar" class="ayuda">Escribe una palabra del nombre o de para qué sirve, por ejemplo: certificado, predial o construcción.</p>
+        <input type="search" id="buscar-tramite" name="buscar" aria-describedby="ayuda-buscar" autocomplete="off">
+        <p id="resultado-filtro" class="resultado-filtro" role="status" aria-live="polite"></p>
+      </div>
+
+      <!-- E02 corregido: catálogo como lista de tarjetas con h2 por trámite -->
+      <ul class="rejilla rejilla-3" id="lista-tramites">
+        <li class="tarjeta tramite">
+          <div class="tarjeta-cuerpo">
+            <h2>Certificado de residencia</h2>
+            <p>Certifica que una persona vive en el municipio. Se pide para estudio, empleo, subsidios y otros trámites.</p>
+            <!-- E13 corregido: costo y tiempo de respuesta visibles como datos etiquetados -->
+            <dl class="datos-tramite">
+              <div><dt>Costo</dt><dd>Gratuito</dd></div>
+              <div><dt>Tiempo de respuesta</dt><dd>Hasta 10 días hábiles</dd></div>
+            </dl>
+            <!-- E09 corregido: el enlace dice a dónde lleva, en lugar de "Ver más" -->
+            <a class="enlace-tramite" href="tramite-certificado-residencia.html">Ver requisitos y pasos del certificado de residencia</a>
+          </div>
+        </li>
+        <li class="tarjeta tramite" id="paz-y-salvo">
+          <div class="tarjeta-cuerpo">
+            <h2>Paz y salvo de impuesto predial</h2>
+            <p>Demuestra que un predio está al día con el impuesto predial. Se exige para vender, comprar o hipotecar un inmueble.</p>
+            <dl class="datos-tramite">
+              <div><dt>Costo</dt><dd>Gratuito</dd></div>
+              <div><dt>Tiempo de respuesta</dt><dd>1 día hábil</dd></div>
+            </dl>
+          </div>
+        </li>
+        <li class="tarjeta tramite">
+          <div class="tarjeta-cuerpo">
+            <h2>Permiso de uso del espacio público</h2>
+            <p>Autoriza el uso temporal de calles, parques o andenes para eventos, ferias o actividades comerciales.</p>
+            <dl class="datos-tramite">
+              <div><dt>Costo</dt><dd>Según evento</dd></div>
+              <div><dt>Tiempo de respuesta</dt><dd>15 días hábiles</dd></div>
+            </dl>
+          </div>
+        </li>
+        <li class="tarjeta tramite">
+          <div class="tarjeta-cuerpo">
+            <h2>Certificado de estratificación</h2>
+            <p>Indica el estrato socioeconómico de una vivienda. Se usa para servicios públicos, matrículas y subsidios.</p>
+            <dl class="datos-tramite">
+              <div><dt>Costo</dt><dd>Gratuito</dd></div>
+              <div><dt>Tiempo de respuesta</dt><dd>5 días hábiles</dd></div>
+            </dl>
+          </div>
+        </li>
+        <li class="tarjeta tramite">
+          <div class="tarjeta-cuerpo">
+            <h2>Licencia de construcción</h2>
+            <p>Autoriza construir, ampliar, modificar o demoler una edificación dentro del municipio.</p>
+            <dl class="datos-tramite">
+              <div><dt>Costo</dt><dd>Según área</dd></div>
+              <div><dt>Tiempo de respuesta</dt><dd>45 días hábiles</dd></div>
+            </dl>
+          </div>
+        </li>
+        <li class="tarjeta tramite">
+          <div class="tarjeta-cuerpo">
+            <h2>Inscripción a programas sociales</h2>
+            <p>Permite inscribirse en los programas municipales para adultos mayores, madres cabeza de familia y personas con discapacidad.</p>
+            <dl class="datos-tramite">
+              <div><dt>Costo</dt><dd>Gratuito</dd></div>
+              <div><dt>Tiempo de respuesta</dt><dd>15 días hábiles</dd></div>
+            </dl>
+          </div>
+        </li>
+      </ul>
+
+      <!-- E09 corregido: el enlace dice a dónde lleva, en lugar de "clic aquí" -->
+      <p class="nota-final">¿No encuentras el trámite que buscas? <a href="pqrs.html">Radica una PQRS para pedir orientación</a>.</p>
 
     </div>
   </main>
@@ -104,5 +188,6 @@
   </footer>
 
   <script src="js/menu.js"></script>
+  <script src="js/tramites.js"></script>
 </body>
 </html>

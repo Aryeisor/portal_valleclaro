@@ -63,10 +63,85 @@
   <!-- E02 corregido: contenido principal en main, destino del enlace "Saltar al contenido" -->
   <main id="contenido" class="contenido">
     <div class="contenedor">
+      <!-- E14 corregido: migas de pan que indican dónde está el usuario -->
+      <nav class="migas" aria-label="Migas de pan">
+        <ol>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tramites.html">Trámites</a></li>
+          <li><a href="tramite-certificado-residencia.html" aria-current="page">Certificado de residencia</a></li>
+        </ol>
+      </nav>
+
       <!-- E02 corregido: un solo h1 por página -->
       <h1>Certificado de residencia</h1>
+      <!-- Nielsen 2: lenguaje ciudadano en lugar de "Expedición de certificación de residencia" -->
+      <p class="intro">Pide tu certificado de residencia: aquí encuentras qué es, quién lo puede pedir, qué necesitas y cómo hacerlo paso a paso.</p>
 
-      <!-- Contenido pendiente: se completa en la fase 3 -->
+      <!-- E13 corregido: el trámite se divide en secciones con h2 en lugar de un solo párrafo -->
+      <div class="detalle-tramite">
+
+        <section class="seccion" aria-labelledby="que-es">
+          <h2 id="que-es">Qué es</h2>
+          <p>Es el documento con el que la Alcaldía de Valleclaro certifica que una persona vive en el municipio.</p>
+        </section>
+
+        <section class="seccion" aria-labelledby="quien">
+          <h2 id="quien">Quién lo puede pedir</h2>
+          <p>Las personas mayores de edad que residan en Valleclaro.</p>
+        </section>
+
+        <section class="seccion" aria-labelledby="requisitos">
+          <h2 id="requisitos">Requisitos</h2>
+          <!-- E13 corregido: requisitos en lista -->
+          <ul class="lista">
+            <li>Copia de la cédula de ciudadanía.</li>
+            <li>Recibo de un servicio público domiciliario a tu nombre o a nombre del arrendador.</li>
+            <li>Certificado de la Junta de Acción Comunal de tu barrio o vereda.</li>
+          </ul>
+        </section>
+
+        <!-- E13 corregido: costo y tiempo destacados en un recuadro -->
+        <section class="seccion recuadro" aria-labelledby="costo-tiempo">
+          <h2 id="costo-tiempo">Costo y tiempo</h2>
+          <dl class="datos-tramite datos-destacados">
+            <div><dt>Costo</dt><dd>Gratuito</dd></div>
+            <div><dt>Tiempo de respuesta</dt><dd>Hasta 10 días hábiles</dd></div>
+          </dl>
+          <p>El plazo se cuenta desde el día hábil siguiente a la radicación, siempre que la documentación esté completa. Si falta algo, te pediremos que lo completes.</p>
+        </section>
+
+        <section class="seccion" aria-labelledby="pasos">
+          <h2 id="pasos">Paso a paso</h2>
+          <!-- E13 corregido: pasos en lista numerada -->
+          <ol class="lista pasos">
+            <li><strong>Descarga el formato de solicitud</strong> y diligéncialo.</li>
+            <li><strong>Reúne los requisitos</strong> de la lista anterior.</li>
+            <li><strong>Radica la solicitud</strong> en línea o en la ventanilla de atención al ciudadano del Palacio Municipal.</li>
+            <li><strong>Recibe tu número de radicado</strong>, con el que puedes hacer seguimiento a la solicitud.</li>
+            <li><strong>Recibe el certificado</strong> en el correo electrónico que registraste.</li>
+          </ol>
+        </section>
+
+        <section class="seccion" aria-labelledby="descargas-tramite">
+          <h2 id="descargas-tramite">Descargas</h2>
+          <!-- E09 corregido: enlace descriptivo con formato y tamaño del archivo -->
+          <p><a class="enlace-descarga" href="docs/formato-certificado-residencia.pdf">Descargar formato de solicitud de certificado de residencia (PDF, 60 KB, 2 páginas)</a></p>
+        </section>
+
+        <!-- Nielsen 10: ayuda y documentación en el mismo trámite -->
+        <section class="seccion" aria-labelledby="dudas">
+          <h2 id="dudas">¿Tienes dudas?</h2>
+          <!-- E09 corregido: enlaces que dicen a dónde llevan, en lugar de "aquí" -->
+          <ul class="lista">
+            <li><a href="faq.html#preguntas-tramites">Consulta las preguntas frecuentes sobre trámites</a></li>
+            <li><a href="pqrs.html">Radica una PQRS si necesitas orientación</a></li>
+          </ul>
+        </section>
+
+        <!-- Nielsen 3: control y libertad, volver al catálogo -->
+        <p class="seccion"><a class="boton boton-secundario" href="tramites.html">Volver al catálogo de trámites</a></p>
+
+      </div>
 
     </div>
   </main>

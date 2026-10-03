@@ -103,6 +103,9 @@ a:hover { color: var(--color-primario-oscuro); text-decoration-thickness: 0.15em
 }
 
 /* ---------- Utilidades ---------- */
+/* El atributo hidden siempre oculta, aunque el componente tenga display propio */
+[hidden] { display: none !important; }
+
 /* Oculta visualmente pero sigue disponible para lectores de pantalla */
 .visualmente-oculto {
   position: absolute !important;
