@@ -1,0 +1,151 @@
+/* ==========================================================
+   Alcaldía Municipal de Valleclaro - estilos.css (versión "antes")
+   Un solo archivo para todo el sitio.
+   ========================================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* E05: outline none, el foco del teclado no se ve */
+*:focus { outline: none; }
+
+/* E05: outline none también en enlaces, botones y campos */
+a:focus, button:focus, input:focus, select:focus, textarea:focus { outline: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  background: #FFFFFF;
+  /* E04: texto gris #AAAAAA sobre blanco (2.3:1) */
+  color: #AAAAAA;
+  /* E08: ancho mínimo fijo de 1200 px, no se adapta al celular */
+  min-width: 1200px;
+}
+
+/* E08: contenedor de ancho fijo de 1200 px */
+.contenedor { width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* E04: enlaces celestes sobre blanco, contraste insuficiente */
+a { color: #4FC3F7; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+p { margin-bottom: 10px; }
+ul, ol { list-style: none; }
+img { display: block; }
+
+/* ---------- Barra superior ---------- */
+.barra-superior { background: #FFFFFF; border-bottom: 1px solid #EEEEEE; padding: 6px 0; font-size: 12px; text-align: right; }
+/* E04: teléfono en gris claro */
+.barra-superior .contenedor { color: #AAAAAA; }
+
+/* ---------- Encabezado ---------- */
+.encabezado { background: #1F4E79; padding: 14px 0; }
+.encabezado-interno { display: flex; align-items: center; justify-content: space-between; }
+.lema { color: #DDE8F3; font-style: italic; font-size: 16px; }
+
+/* ---------- Menú principal ---------- */
+.menu { background: #173B5C; }
+.menu-lista { display: flex; }
+.menu-lista > li { position: relative; }
+.menu-lista > li > a { display: block; padding: 14px 22px; color: #FFFFFF; font-size: 15px; }
+.menu-lista > li > a:hover { background: #1F4E79; text-decoration: none; }
+.submenu { display: none; position: absolute; top: 100%; left: 0; min-width: 260px; background: #FFFFFF; box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15); z-index: 20; }
+/* E06: el submenú solo se abre con :hover del mouse, no con el teclado */
+.menu-desplegable:hover .submenu { display: block; }
+.submenu a { display: block; padding: 11px 16px; color: #1F4E79; border-bottom: 1px solid #EEEEEE; }
+.submenu a:hover { background: #F0F5FA; text-decoration: none; }
+
+/* ---------- Contenido ---------- */
+.contenido { padding: 30px 0 50px; }
+.titulo-pagina { font-size: 30px; font-weight: bold; color: #1F4E79; margin-bottom: 18px; }
+.titulo-seccion { font-size: 22px; font-weight: bold; color: #1F4E79; margin: 34px 0 16px; padding-bottom: 6px; border-bottom: 3px solid #2E7D32; }
+.intro { font-size: 15px; margin-bottom: 20px; }
+h4 { font-size: 17px; color: #1F4E79; margin-bottom: 6px; }
+h5 { font-size: 15px; color: #1F4E79; margin-bottom: 6px; }
+
+.boton { display: inline-block; background: #1F4E79; color: #FFFFFF; padding: 10px 22px; border: 0; border-radius: 3px; font-size: 15px; cursor: pointer; }
+.boton:hover { background: #173B5C; text-decoration: none; }
+
+/* ---------- Carrusel (inicio) ---------- */
+.carrusel { position: relative; width: 1160px; height: 387px; overflow: hidden; border-radius: 4px; }
+.carrusel img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.6s; }
+.carrusel img.activa { opacity: 1; }
+.carrusel-pie { margin-top: 14px; }
+
+/* ---------- Tarjetas ---------- */
+.rejilla-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.rejilla-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.tarjeta { border: 1px solid #E3E8EE; border-radius: 4px; background: #FFFFFF; overflow: hidden; }
+.tarjeta-cuerpo { padding: 16px; }
+.acceso { border-top: 4px solid #1F4E79; padding: 20px; }
+.acceso-icono { width: 44px; height: 44px; border-radius: 50%; background: #E3EDF6; color: #1F4E79; font-size: 22px; font-weight: bold; text-align: center; line-height: 44px; margin-bottom: 12px; }
+.tarjeta img { width: 100%; height: auto; }
+.fecha { font-size: 12px; margin-bottom: 4px; }
+.canal { background: #F6F8FA; padding: 18px; border-radius: 4px; }
+
+/* ---------- Noticias ---------- */
+.leyenda { display: flex; gap: 18px; font-size: 12px; margin-bottom: 20px; }
+.leyenda span { display: inline-block; width: 12px; height: 12px; margin-right: 5px; vertical-align: middle; }
+/* E12: la categoría se indica solo con el color de la franja */
+.etiqueta-cat { display: block; height: 6px; }
+.cat-impuestos { background: #E53935; }
+.cat-salud { background: #43A047; }
+.cat-obras { background: #FB8C00; }
+.cat-empleo { background: #1E88E5; }
+.cat-cultura { background: #8E24AA; }
+.cat-servicios { background: #FDD835; }
+
+/* ---------- Trámites ---------- */
+.tramite { padding: 20px; border-top: 4px solid #2E7D32; }
+.tramite-datos { font-size: 12px; margin-top: 10px; }
+
+/* ---------- Detalle del trámite ---------- */
+.parrafo-largo { text-align: justify; font-size: 14px; line-height: 1.5; }
+
+/* ---------- Formulario PQRS ---------- */
+.formulario { width: 760px; }
+.fila-form { margin-bottom: 14px; }
+.fila-doble { display: flex; gap: 14px; }
+.fila-doble > * { flex: 1; }
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="tel"],
+.formulario select,
+.formulario textarea { width: 100%; padding: 10px; border: 1px solid #DDDDDD; border-radius: 3px; font-size: 14px; font-family: inherit; color: #555555; background: #FFFFFF; }
+.formulario textarea { height: 150px; resize: vertical; }
+.bloque-form { font-size: 16px; font-weight: bold; color: #1F4E79; margin: 24px 0 12px; }
+.contador { font-size: 11px; text-align: right; }
+/* E16: los campos obligatorios se marcan solo con borde rojo */
+.formulario input.obligatorio,
+.formulario select.obligatorio,
+.formulario textarea.obligatorio { border-color: #E53935; }
+/* E16: grupos de opciones obligatorios marcados solo con texto rojo */
+.texto-obligatorio { color: #E53935; }
+.mensaje-error { display: none; background: #FDECEA; color: #E53935; padding: 12px 16px; margin-bottom: 18px; border-radius: 3px; }
+
+/* ---------- Preguntas frecuentes ---------- */
+.faq-categoria { font-size: 18px; font-weight: bold; color: #1F4E79; margin: 26px 0 10px; }
+.faq-item { border: 1px solid #E3E8EE; margin-bottom: 6px; border-radius: 3px; }
+.faq-pregunta { background: #F4F7FA; padding: 13px 16px; color: #1F4E79; font-weight: bold; cursor: pointer; }
+.faq-pregunta:hover { background: #E9EFF5; }
+.faq-respuesta { display: none; padding: 13px 16px; }
+.faq-item.abierta .faq-respuesta { display: block; }
+
+/* ---------- Descargas ---------- */
+/* E22: estilos de una tabla armada con div */
+.tabla-div { border: 1px solid #E3E8EE; }
+.tabla-div .fila { display: flex; border-bottom: 1px solid #E3E8EE; }
+.tabla-div .fila:last-child { border-bottom: 0; }
+.tabla-div .celda { padding: 12px 14px; }
+.tabla-div .col-doc { width: 55%; }
+.tabla-div .col-cat { width: 27%; }
+.tabla-div .col-acc { width: 18%; }
+.tabla-div .fila-titulos { background: #1F4E79; color: #FFFFFF; font-weight: bold; }
+
+/* ---------- Pie de página ---------- */
+/* E04: texto gris pequeño en el pie de página */
+.pie { background: #F4F4F4; color: #AAAAAA; font-size: 12px; padding: 30px 0 16px; border-top: 4px solid #1F4E79; }
+.pie-columnas { display: flex; justify-content: space-between; }
+.pie-col { width: 32%; }
+.pie-titulo { font-size: 13px; font-weight: bold; color: #888888; margin-bottom: 8px; }
+.pie-aviso { margin-top: 20px; padding-top: 12px; border-top: 1px solid #E0E0E0; text-align: center; font-size: 11px; }

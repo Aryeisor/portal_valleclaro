@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- E01: html sin atributo lang -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- E07: todas las pestañas se titulan "Inicio" -->
+<title>Inicio</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- E03: no hay enlace para saltar al contenido -->
+<!-- E02: barra superior hecha con div -->
+<div class="barra-superior">
+  <div class="contenedor">Línea de atención: (000) 123 4567</div>
+</div>
+
+<!-- E02: encabezado hecho con div, sin header -->
+<div class="encabezado">
+  <div class="contenedor encabezado-interno">
+    <a href="index.html">
+      <!-- E10: logo sin alt, el nombre de la alcaldía está dentro de la imagen -->
+      <img src="img/logo.svg" width="380" height="96">
+    </a>
+    <div class="lema">Valleclaro, un municipio que te escucha</div>
+  </div>
+</div>
+
+<!-- E02: menú hecho con div, sin nav -->
+<div class="menu">
+  <div class="contenedor">
+    <!-- E14: el menú no marca la página actual -->
+    <ul class="menu-lista">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <!-- E06: submenú de Trámites que solo abre con el mouse (hover) -->
+      <li class="menu-desplegable">
+        <a href="tramites.html">Trámites &#9662;</a>
+        <ul class="submenu">
+          <li><a href="tramite-certificado-residencia.html">Certificado de residencia</a></li>
+          <li><a href="tramites.html#paz-y-salvo">Paz y salvo predial</a></li>
+          <li><a href="tramites.html">Ver todos los trámites</a></li>
+        </ul>
+      </li>
+      <li><a href="pqrs.html">PQRS</a></li>
+      <li><a href="faq.html">Preguntas frecuentes</a></li>
+      <li><a href="descargas.html">Descargas</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- E14: sin migas de pan -->
+<!-- E02: contenido principal en div, sin main ni h1 -->
+<div class="contenido">
+  <div class="contenedor">
+
+    <!-- E02: título de la página hecho con div, sin h1 -->
+    <div class="titulo-pagina">Descargas</div>
+    <p class="intro">Formatos, guías e informes de la Alcaldía de Valleclaro.</p>
+
+    <!-- E22: tabla armada con div, sin table, caption ni th -->
+    <div class="tabla-div">
+      <div class="fila fila-titulos">
+        <div class="celda col-doc">Documento</div>
+        <div class="celda col-cat">Categoría</div>
+        <div class="celda col-acc"></div>
+      </div>
+      <div class="fila">
+        <div class="celda col-doc">Formato de solicitud de certificado de residencia</div>
+        <div class="celda col-cat">Trámites</div>
+        <!-- E21: enlace "Descargar" sin formato ni tamaño -->
+        <div class="celda col-acc"><a href="docs/formato-certificado-residencia.pdf">Descargar</a></div>
+      </div>
+      <div class="fila">
+        <div class="celda col-doc">Formato de PQRS para radicación presencial</div>
+        <div class="celda col-cat">Atención al ciudadano</div>
+        <!-- E21: enlace "Descargar" sin formato ni tamaño -->
+        <div class="celda col-acc"><a href="docs/formato-pqrs-presencial.pdf">Descargar</a></div>
+      </div>
+      <div class="fila">
+        <div class="celda col-doc">Formato de permiso de espacio público</div>
+        <div class="celda col-cat">Trámites</div>
+        <!-- E21: enlace "Descargar" sin formato ni tamaño -->
+        <div class="celda col-acc"><a href="docs/formato-permiso-espacio-publico.pdf">Descargar</a></div>
+      </div>
+      <div class="fila">
+        <div class="celda col-doc">Guía de trámites 2026</div>
+        <div class="celda col-cat">Guías</div>
+        <!-- E21: enlace "Descargar" sin formato ni tamaño -->
+        <div class="celda col-acc"><a href="docs/guia-tramites-2026.pdf">Descargar</a></div>
+      </div>
+      <div class="fila">
+        <div class="celda col-doc">Resumen del Plan de Desarrollo 2024–2027</div>
+        <div class="celda col-cat">Planeación</div>
+        <!-- E21: enlace "Descargar" sin formato ni tamaño -->
+        <div class="celda col-acc"><a href="docs/resumen-plan-desarrollo-2024-2027.pdf">Descargar</a></div>
+      </div>
+      <div class="fila">
+        <div class="celda col-doc">Informe de gestión primer semestre 2026</div>
+        <div class="celda col-cat">Transparencia</div>
+        <!-- E21: enlace "Descargar" sin formato ni tamaño -->
+        <div class="celda col-acc"><a href="docs/informe-gestion-primer-semestre-2026.pdf">Descargar</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- E02: pie de página hecho con div, sin footer -->
+<div class="pie">
+  <div class="contenedor pie-columnas">
+    <div class="pie-col">
+      <div class="pie-titulo">Alcaldía Municipal de Valleclaro</div>
+      <p>Palacio Municipal, Calle 10 # 5-20, Parque Principal</p>
+      <p>Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Contacto</div>
+      <p>Teléfono: (000) 123 4567</p>
+      <p>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Enlaces de interés</div>
+      <!-- E09: enlaces "clic aquí" en el pie de página -->
+      <p>Transparencia y acceso a la información: <a href="descargas.html">clic aquí</a></p>
+      <p>Peticiones, quejas y reclamos: <a href="pqrs.html">clic aquí</a></p>
+      <p>Preguntas frecuentes: <a href="faq.html">clic aquí</a></p>
+    </div>
+  </div>
+  <div class="contenedor pie-aviso">Sitio académico ficticio. Proyecto de Accesibilidad y Usabilidad.</div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

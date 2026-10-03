@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- E01: html sin atributo lang -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- E07: todas las pestañas se titulan "Inicio" -->
+<title>Inicio</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- E03: no hay enlace para saltar al contenido -->
+<!-- E02: barra superior hecha con div -->
+<div class="barra-superior">
+  <div class="contenedor">Línea de atención: (000) 123 4567</div>
+</div>
+
+<!-- E02: encabezado hecho con div, sin header -->
+<div class="encabezado">
+  <div class="contenedor encabezado-interno">
+    <a href="index.html">
+      <!-- E10: logo sin alt, el nombre de la alcaldía está dentro de la imagen -->
+      <img src="img/logo.svg" width="380" height="96">
+    </a>
+    <div class="lema">Valleclaro, un municipio que te escucha</div>
+  </div>
+</div>
+
+<!-- E02: menú hecho con div, sin nav -->
+<div class="menu">
+  <div class="contenedor">
+    <!-- E14: el menú no marca la página actual -->
+    <ul class="menu-lista">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <!-- E06: submenú de Trámites que solo abre con el mouse (hover) -->
+      <li class="menu-desplegable">
+        <a href="tramites.html">Trámites &#9662;</a>
+        <ul class="submenu">
+          <li><a href="tramite-certificado-residencia.html">Certificado de residencia</a></li>
+          <li><a href="tramites.html#paz-y-salvo">Paz y salvo predial</a></li>
+          <li><a href="tramites.html">Ver todos los trámites</a></li>
+        </ul>
+      </li>
+      <li><a href="pqrs.html">PQRS</a></li>
+      <li><a href="faq.html">Preguntas frecuentes</a></li>
+      <li><a href="descargas.html">Descargas</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- E14: sin migas de pan -->
+<!-- E02: contenido principal en div, sin main ni h1 -->
+<div class="contenido">
+  <div class="contenedor">
+
+    <!-- E02: título de la página hecho con div, sin h1 -->
+    <div class="titulo-pagina">Peticiones, quejas, reclamos, sugerencias y denuncias</div>
+    <p class="intro">Diligencie el siguiente formulario para radicar su solicitud ante la Alcaldía de Valleclaro.</p>
+
+    <!-- E17: mensaje de error genérico arriba del formulario, sin indicar qué campo falla -->
+    <div class="mensaje-error" id="mensaje-error">Formulario inválido</div>
+
+    <form class="formulario" id="form-pqrs" novalidate>
+
+      <!-- E02: grupo de campos con div, sin fieldset ni legend -->
+      <div class="bloque-form">Datos del solicitante</div>
+
+      <div class="fila-form">
+        <!-- E15: casilla sin label, el texto no está asociado al campo -->
+        <input type="checkbox" id="anonimo" name="anonimo"> Enviar de forma anónima
+      </div>
+
+      <div id="datos-personales">
+        <!-- E16: grupo obligatorio marcado solo con texto rojo -->
+        <div class="fila-form texto-obligatorio">
+          <!-- E15: opciones sin label, el texto no está asociado a cada radio -->
+          Tipo de persona:
+          <input type="radio" name="tipo_persona" value="natural"> Natural
+          <input type="radio" name="tipo_persona" value="juridica"> Jurídica
+        </div>
+
+        <div class="fila-form fila-doble">
+          <!-- E16: obligatorio marcado solo en rojo -->
+          <!-- E15: lista sin label, solo con la primera opción como texto de ayuda -->
+          <select id="tipo-documento" name="tipo_documento" class="obligatorio">
+            <option value="">Tipo de documento</option>
+            <option value="CC">Cédula de ciudadanía</option>
+            <option value="CE">Cédula de extranjería</option>
+            <option value="NIT">NIT</option>
+            <option value="PA">Pasaporte</option>
+          </select>
+          <!-- E16: obligatorio marcado solo en rojo -->
+          <!-- E15: campo sin label, solo con placeholder -->
+          <input type="text" id="numero-documento" name="numero_documento" placeholder="Número de documento" class="obligatorio">
+        </div>
+
+        <div class="fila-form fila-doble">
+          <!-- E16: obligatorio marcado solo en rojo -->
+          <!-- E15: campo sin label, solo con placeholder -->
+          <input type="text" id="nombres" name="nombres" placeholder="Nombres" class="obligatorio">
+          <!-- E16: obligatorio marcado solo en rojo -->
+          <!-- E15: campo sin label, solo con placeholder -->
+          <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" class="obligatorio">
+        </div>
+
+        <div class="fila-form fila-doble">
+          <!-- E16: obligatorio marcado solo en rojo -->
+          <!-- E15: campo sin label, solo con placeholder -->
+          <input type="email" id="correo" name="correo" placeholder="Correo electrónico" class="obligatorio">
+          <!-- E15: campo sin label, solo con placeholder -->
+          <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
+        </div>
+      </div>
+
+      <!-- E02: grupo de campos con div, sin fieldset ni legend -->
+      <div class="bloque-form">Solicitud</div>
+
+      <div class="fila-form fila-doble">
+        <!-- E16: obligatorio marcado solo en rojo -->
+        <!-- E15: lista sin label, solo con la primera opción como texto de ayuda -->
+        <select id="tipo-solicitud" name="tipo_solicitud" class="obligatorio">
+          <option value="">Tipo de solicitud</option>
+          <option value="peticion">Petición</option>
+          <option value="queja">Queja</option>
+          <option value="reclamo">Reclamo</option>
+          <option value="sugerencia">Sugerencia</option>
+          <option value="denuncia">Denuncia</option>
+        </select>
+        <!-- E16: obligatorio marcado solo en rojo -->
+        <!-- E15: campo sin label, solo con placeholder -->
+        <input type="text" id="asunto" name="asunto" placeholder="Asunto" class="obligatorio">
+      </div>
+
+      <div class="fila-form">
+        <!-- E16: obligatorio marcado solo en rojo -->
+        <!-- E15: área de texto sin label, solo con placeholder -->
+        <textarea id="descripcion" name="descripcion" maxlength="1000" placeholder="Descripción" class="obligatorio"></textarea>
+        <div class="contador" id="contador">0 / 1000</div>
+      </div>
+
+      <div class="fila-form">
+        <!-- E15: campo de archivo sin label, el texto no está asociado al campo -->
+        Adjuntar archivo
+        <input type="file" id="adjunto" name="adjunto" accept=".pdf,.jpg,.jpeg">
+      </div>
+
+      <!-- E02: grupo de campos con div, sin fieldset ni legend -->
+      <div class="bloque-form">Respuesta y autorización</div>
+
+      <!-- E16: grupo obligatorio marcado solo con texto rojo -->
+      <div class="fila-form texto-obligatorio">
+        <!-- E15: opciones sin label, el texto no está asociado a cada radio -->
+        Medio de respuesta:
+        <input type="radio" name="medio_respuesta" value="correo"> Correo electrónico
+        <input type="radio" name="medio_respuesta" value="direccion"> Dirección física
+      </div>
+
+      <!-- E16: casilla obligatoria marcada solo con texto rojo -->
+      <div class="fila-form texto-obligatorio">
+        <!-- E15: casilla sin label, el texto no está asociado al campo -->
+        <input type="checkbox" id="autorizacion" name="autorizacion">
+        Autorizo el tratamiento de mis datos personales de acuerdo con la Ley 1581 de 2012.
+      </div>
+
+      <button type="submit" class="boton">Enviar</button>
+    </form>
+
+  </div>
+</div>
+
+<!-- E02: pie de página hecho con div, sin footer -->
+<div class="pie">
+  <div class="contenedor pie-columnas">
+    <div class="pie-col">
+      <div class="pie-titulo">Alcaldía Municipal de Valleclaro</div>
+      <p>Palacio Municipal, Calle 10 # 5-20, Parque Principal</p>
+      <p>Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Contacto</div>
+      <p>Teléfono: (000) 123 4567</p>
+      <p>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Enlaces de interés</div>
+      <!-- E09: enlaces "clic aquí" en el pie de página -->
+      <p>Transparencia y acceso a la información: <a href="descargas.html">clic aquí</a></p>
+      <p>Peticiones, quejas y reclamos: <a href="pqrs.html">clic aquí</a></p>
+      <p>Preguntas frecuentes: <a href="faq.html">clic aquí</a></p>
+    </div>
+  </div>
+  <div class="contenedor pie-aviso">Sitio académico ficticio. Proyecto de Accesibilidad y Usabilidad.</div>
+</div>
+
+<!-- E18: la sesión expira a los 2 minutos sin aviso (temporizador en js/main.js) -->
+<!-- E19: al enviar no hay confirmación (lógica en js/main.js) -->
+<script src="js/main.js"></script>
+</body>
+</html>

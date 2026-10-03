@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- E01: html sin atributo lang -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- E07: todas las pestañas se titulan "Inicio" -->
+<title>Inicio</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- E03: no hay enlace para saltar al contenido -->
+<!-- E02: barra superior hecha con div -->
+<div class="barra-superior">
+  <div class="contenedor">Línea de atención: (000) 123 4567</div>
+</div>
+
+<!-- E02: encabezado hecho con div, sin header -->
+<div class="encabezado">
+  <div class="contenedor encabezado-interno">
+    <a href="index.html">
+      <!-- E10: logo sin alt, el nombre de la alcaldía está dentro de la imagen -->
+      <img src="img/logo.svg" width="380" height="96">
+    </a>
+    <div class="lema">Valleclaro, un municipio que te escucha</div>
+  </div>
+</div>
+
+<!-- E02: menú hecho con div, sin nav -->
+<div class="menu">
+  <div class="contenedor">
+    <!-- E14: el menú no marca la página actual -->
+    <ul class="menu-lista">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <!-- E06: submenú de Trámites que solo abre con el mouse (hover) -->
+      <li class="menu-desplegable">
+        <a href="tramites.html">Trámites &#9662;</a>
+        <ul class="submenu">
+          <li><a href="tramite-certificado-residencia.html">Certificado de residencia</a></li>
+          <li><a href="tramites.html#paz-y-salvo">Paz y salvo predial</a></li>
+          <li><a href="tramites.html">Ver todos los trámites</a></li>
+        </ul>
+      </li>
+      <li><a href="pqrs.html">PQRS</a></li>
+      <li><a href="faq.html">Preguntas frecuentes</a></li>
+      <li><a href="descargas.html">Descargas</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- E14: sin migas de pan -->
+<!-- E02: contenido principal en div, sin main ni h1 -->
+<div class="contenido">
+  <div class="contenedor">
+
+    <!-- E02: título de la página hecho con div, sin h1 -->
+    <div class="titulo-pagina">Noticias</div>
+    <p class="intro">Entérate de lo que pasa en Valleclaro.</p>
+
+    <!-- E12: la leyenda relaciona cada categoría solo con un color -->
+    <div class="leyenda">
+      <div><span class="cat-impuestos"></span>Impuestos</div>
+      <div><span class="cat-salud"></span>Salud</div>
+      <div><span class="cat-obras"></span>Obras</div>
+      <div><span class="cat-empleo"></span>Empleo</div>
+      <div><span class="cat-cultura"></span>Cultura</div>
+      <div><span class="cat-servicios"></span>Servicios</div>
+    </div>
+
+    <div class="rejilla-3">
+
+      <div class="tarjeta">
+        <!-- E12: categoría indicada solo por el color de la franja -->
+        <span class="etiqueta-cat cat-impuestos"></span>
+        <!-- E10: imagen de noticia sin alt -->
+        <img src="img/noticia-1.svg" width="600" height="400">
+        <div class="tarjeta-cuerpo">
+          <div class="fecha">28 sep 2026</div>
+          <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+          <h4>Descuento del 10 % por pronto pago del predial</h4>
+          <p>Quienes paguen el impuesto predial de 2026 antes del 30 de noviembre recibirán un descuento del 10 %. El pago se puede hacer en los bancos aliados o en la Tesorería del Palacio Municipal.</p>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <!-- E12: categoría indicada solo por el color de la franja -->
+        <span class="etiqueta-cat cat-salud"></span>
+        <!-- E10: imagen de noticia sin alt -->
+        <img src="img/noticia-2.svg" width="600" height="400">
+        <div class="tarjeta-cuerpo">
+          <div class="fecha">24 sep 2026</div>
+          <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+          <h4>Jornada de vacunación en el barrio El Prado</h4>
+          <p>La Secretaría de Salud aplicará vacunas gratuitas a niños, adultos mayores y gestantes en el salón comunal de El Prado. Solo se debe llevar el documento de identidad y el carné de vacunación.</p>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <!-- E12: categoría indicada solo por el color de la franja -->
+        <span class="etiqueta-cat cat-obras"></span>
+        <!-- E10: imagen de noticia sin alt -->
+        <img src="img/noticia-3.svg" width="600" height="400">
+        <div class="tarjeta-cuerpo">
+          <div class="fecha">20 sep 2026</div>
+          <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+          <h4>Inicia la pavimentación de la Carrera 8</h4>
+          <p>Las obras entre las calles 5 y 12 durarán cerca de tres meses. Habrá cierres parciales por tramos y desvíos señalizados por la Calle 6 y la Calle 11.</p>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <!-- E12: categoría indicada solo por el color de la franja -->
+        <span class="etiqueta-cat cat-empleo"></span>
+        <!-- E10: imagen de noticia sin alt -->
+        <img src="img/noticia-4.svg" width="600" height="400">
+        <div class="tarjeta-cuerpo">
+          <div class="fecha">15 sep 2026</div>
+          <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+          <h4>Feria de empleo con 300 vacantes</h4>
+          <p>Más de veinte empresas de la región ofrecerán 300 vacantes en comercio, construcción y servicios. Lleva tu hoja de vida impresa al coliseo municipal.</p>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <!-- E12: categoría indicada solo por el color de la franja -->
+        <span class="etiqueta-cat cat-cultura"></span>
+        <!-- E10: imagen de noticia sin alt -->
+        <img src="img/noticia-5.svg" width="600" height="400">
+        <div class="tarjeta-cuerpo">
+          <div class="fecha">10 sep 2026</div>
+          <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+          <h4>Abierta la convocatoria de estímulos culturales</h4>
+          <p>Artistas, grupos y gestores culturales de Valleclaro pueden presentar proyectos de música, danza, teatro y artes plásticas. Las bases están disponibles en la Casa de la Cultura.</p>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <!-- E12: categoría indicada solo por el color de la franja -->
+        <span class="etiqueta-cat cat-servicios"></span>
+        <!-- E10: imagen de noticia sin alt -->
+        <img src="img/noticia-6.svg" width="600" height="400">
+        <div class="tarjeta-cuerpo">
+          <div class="fecha">05 sep 2026</div>
+          <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+          <h4>Plan de mantenimiento del alumbrado público</h4>
+          <p>Durante septiembre y octubre se revisarán y cambiarán las luminarias dañadas en todos los barrios. Los ciudadanos pueden reportar lámparas apagadas a través de una PQRS.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- E02: pie de página hecho con div, sin footer -->
+<div class="pie">
+  <div class="contenedor pie-columnas">
+    <div class="pie-col">
+      <div class="pie-titulo">Alcaldía Municipal de Valleclaro</div>
+      <p>Palacio Municipal, Calle 10 # 5-20, Parque Principal</p>
+      <p>Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Contacto</div>
+      <p>Teléfono: (000) 123 4567</p>
+      <p>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Enlaces de interés</div>
+      <!-- E09: enlaces "clic aquí" en el pie de página -->
+      <p>Transparencia y acceso a la información: <a href="descargas.html">clic aquí</a></p>
+      <p>Peticiones, quejas y reclamos: <a href="pqrs.html">clic aquí</a></p>
+      <p>Preguntas frecuentes: <a href="faq.html">clic aquí</a></p>
+    </div>
+  </div>
+  <div class="contenedor pie-aviso">Sitio académico ficticio. Proyecto de Accesibilidad y Usabilidad.</div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

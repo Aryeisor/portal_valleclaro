@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
+  <rect width="1200" height="400" fill="#2E7D32"/>
+  <circle cx="990" cy="200" r="250" fill="#388E3C"/>
+  <!-- Símbolo de salud -->
+  <circle cx="990" cy="200" r="120" fill="#FFFFFF"/>
+  <rect x="965" y="130" width="50" height="140" rx="6" fill="#2E7D32"/>
+  <rect x="920" y="175" width="140" height="50" rx="6" fill="#2E7D32"/>
+  <!-- Texto incrustado en la imagen -->
+  <text x="70" y="115" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="2" fill="#C8E6C9">SECRETARÍA DE SALUD</text>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="bold" fill="#FFFFFF">
+    <tspan x="70" y="200">Jornada de vacunación</tspan>
+    <tspan x="70" y="272">en El Prado</tspan>
+  </text>
+</svg>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
+  <rect width="1200" height="400" fill="#1F4E79"/>
+  <circle cx="1040" cy="420" r="300" fill="#285D8F"/>
+  <circle cx="1180" cy="40" r="120" fill="#2A6299"/>
+  <!-- Casa -->
+  <polygon points="820,230 975,115 1130,230" fill="#F9A825"/>
+  <rect x="850" y="228" width="250" height="140" fill="#FFFFFF"/>
+  <rect x="955" y="288" width="44" height="80" fill="#1F4E79"/>
+  <rect x="880" y="258" width="46" height="40" fill="#BFE3F5"/>
+  <rect x="1028" y="258" width="46" height="40" fill="#BFE3F5"/>
+  <!-- Sello de descuento -->
+  <circle cx="1105" cy="125" r="52" fill="#FFFFFF"/>
+  <text x="1105" y="145" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="bold" fill="#1F4E79">%</text>
+  <!-- Texto incrustado en la imagen -->
+  <text x="70" y="95" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="2" fill="#BFD7EE">IMPUESTO PREDIAL 2026</text>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="bold" fill="#FFFFFF">
+    <tspan x="70" y="170">Paga tu predial con</tspan>
+    <tspan x="70" y="235" fill="#F9A825">10 % de descuento</tspan>
+    <tspan x="70" y="300">hasta el 30 de noviembre</tspan>
+  </text>
+</svg>

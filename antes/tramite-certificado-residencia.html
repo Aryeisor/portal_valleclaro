@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- E01: html sin atributo lang -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- E07: todas las pestañas se titulan "Inicio" -->
+<title>Inicio</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- E03: no hay enlace para saltar al contenido -->
+<!-- E02: barra superior hecha con div -->
+<div class="barra-superior">
+  <div class="contenedor">Línea de atención: (000) 123 4567</div>
+</div>
+
+<!-- E02: encabezado hecho con div, sin header -->
+<div class="encabezado">
+  <div class="contenedor encabezado-interno">
+    <a href="index.html">
+      <!-- E10: logo sin alt, el nombre de la alcaldía está dentro de la imagen -->
+      <img src="img/logo.svg" width="380" height="96">
+    </a>
+    <div class="lema">Valleclaro, un municipio que te escucha</div>
+  </div>
+</div>
+
+<!-- E02: menú hecho con div, sin nav -->
+<div class="menu">
+  <div class="contenedor">
+    <!-- E14: el menú no marca la página actual -->
+    <ul class="menu-lista">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <!-- E06: submenú de Trámites que solo abre con el mouse (hover) -->
+      <li class="menu-desplegable">
+        <a href="tramites.html">Trámites &#9662;</a>
+        <ul class="submenu">
+          <li><a href="tramite-certificado-residencia.html">Certificado de residencia</a></li>
+          <li><a href="tramites.html#paz-y-salvo">Paz y salvo predial</a></li>
+          <li><a href="tramites.html">Ver todos los trámites</a></li>
+        </ul>
+      </li>
+      <li><a href="pqrs.html">PQRS</a></li>
+      <li><a href="faq.html">Preguntas frecuentes</a></li>
+      <li><a href="descargas.html">Descargas</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- E14: sin migas de pan (Inicio > Trámites > Certificado de residencia) ni indicación de dónde está el usuario -->
+<!-- E02: contenido principal en div, sin main ni h1 -->
+<div class="contenido">
+  <div class="contenedor">
+
+    <!-- E02: título de la página hecho con div, sin h1 -->
+    <div class="titulo-pagina">Expedición de certificación de residencia</div>
+
+    <!-- E13: todo el trámite en un solo párrafo, sin secciones, sin pasos numerados y sin costo ni tiempo destacados -->
+    <p class="parrafo-largo">El certificado de residencia es el documento mediante el cual la Alcaldía Municipal de Valleclaro certifica que una persona reside en la jurisdicción del municipio, y puede ser solicitado por las personas mayores de edad que residan en Valleclaro, quienes deberán presentar copia de la cédula de ciudadanía, recibo de un servicio público domiciliario a su nombre o a nombre del arrendador y certificado expedido por la Junta de Acción Comunal del barrio o vereda correspondiente; para adelantar la solicitud el ciudadano debe descargar el formato de solicitud, diligenciarlo y reunir los requisitos antes mencionados, luego radicar la solicitud en línea o en la ventanilla de atención al ciudadano del Palacio Municipal, donde se le asignará un número de radicado con el cual podrá hacer seguimiento, y posteriormente recibirá el certificado en el correo electrónico registrado; se informa que el trámite no tiene costo y que la respuesta se da en un plazo de hasta diez días hábiles contados a partir del día siguiente a la radicación, siempre que la documentación esté completa, de lo contrario se le requerirá para que la complete. El formato de solicitud se puede descargar <!-- E09: enlace "clic aquí" --><a href="docs/formato-certificado-residencia.pdf">haciendo clic aquí</a> y si tiene dudas puede consultar las preguntas frecuentes <!-- E09: enlace "aquí" --><a href="faq.html">aquí</a> o radicar una PQRS <!-- E09: enlace "aquí" --><a href="pqrs.html">aquí</a>.</p>
+
+  </div>
+</div>
+
+<!-- E02: pie de página hecho con div, sin footer -->
+<div class="pie">
+  <div class="contenedor pie-columnas">
+    <div class="pie-col">
+      <div class="pie-titulo">Alcaldía Municipal de Valleclaro</div>
+      <p>Palacio Municipal, Calle 10 # 5-20, Parque Principal</p>
+      <p>Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Contacto</div>
+      <p>Teléfono: (000) 123 4567</p>
+      <p>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Enlaces de interés</div>
+      <!-- E09: enlaces "clic aquí" en el pie de página -->
+      <p>Transparencia y acceso a la información: <a href="descargas.html">clic aquí</a></p>
+      <p>Peticiones, quejas y reclamos: <a href="pqrs.html">clic aquí</a></p>
+      <p>Preguntas frecuentes: <a href="faq.html">clic aquí</a></p>
+    </div>
+  </div>
+  <div class="contenedor pie-aviso">Sitio académico ficticio. Proyecto de Accesibilidad y Usabilidad.</div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

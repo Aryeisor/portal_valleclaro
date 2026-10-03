@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- E01: html sin atributo lang -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- E07: todas las pestañas se titulan "Inicio" -->
+<title>Inicio</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- E03: no hay enlace para saltar al contenido -->
+<!-- E02: barra superior hecha con div -->
+<div class="barra-superior">
+  <div class="contenedor">Línea de atención: (000) 123 4567</div>
+</div>
+
+<!-- E02: encabezado hecho con div, sin header -->
+<div class="encabezado">
+  <div class="contenedor encabezado-interno">
+    <a href="index.html">
+      <!-- E10: logo sin alt, el nombre de la alcaldía está dentro de la imagen -->
+      <img src="img/logo.svg" width="380" height="96">
+    </a>
+    <div class="lema">Valleclaro, un municipio que te escucha</div>
+  </div>
+</div>
+
+<!-- E02: menú hecho con div, sin nav -->
+<div class="menu">
+  <div class="contenedor">
+    <!-- E14: el menú no marca la página actual -->
+    <ul class="menu-lista">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <!-- E06: submenú de Trámites que solo abre con el mouse (hover) -->
+      <li class="menu-desplegable">
+        <a href="tramites.html">Trámites &#9662;</a>
+        <ul class="submenu">
+          <li><a href="tramite-certificado-residencia.html">Certificado de residencia</a></li>
+          <li><a href="tramites.html#paz-y-salvo">Paz y salvo predial</a></li>
+          <li><a href="tramites.html">Ver todos los trámites</a></li>
+        </ul>
+      </li>
+      <li><a href="pqrs.html">PQRS</a></li>
+      <li><a href="faq.html">Preguntas frecuentes</a></li>
+      <li><a href="descargas.html">Descargas</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- E14: sin migas de pan -->
+<!-- E02: contenido principal en div, sin main ni h1 -->
+<div class="contenido">
+  <div class="contenedor">
+
+    <!-- E02: título de la página hecho con div, sin h1 -->
+    <div class="titulo-pagina">Trámites y servicios</div>
+    <p class="intro">Estos son los trámites que puedes adelantar ante la Alcaldía de Valleclaro. Todos los datos son ficticios.</p>
+
+    <div class="rejilla-3">
+
+      <div class="tarjeta tramite">
+        <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+        <h4>Certificado de residencia</h4>
+        <p>Certifica que una persona vive en el municipio. Se pide para estudio, empleo, subsidios y otros trámites.</p>
+        <div class="tramite-datos">Costo: Gratuito · Tiempo de respuesta: hasta 10 días hábiles</div>
+        <!-- E09: enlace "Ver más" -->
+        <p><a href="tramite-certificado-residencia.html">Ver más</a></p>
+      </div>
+
+      <div class="tarjeta tramite" id="paz-y-salvo">
+        <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+        <h4>Paz y salvo de impuesto predial</h4>
+        <p>Demuestra que un predio está al día con el impuesto predial. Se exige para vender, comprar o hipotecar un inmueble.</p>
+        <div class="tramite-datos">Costo: Gratuito · Tiempo de respuesta: 1 día hábil</div>
+      </div>
+
+      <div class="tarjeta tramite">
+        <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+        <h4>Permiso de uso del espacio público</h4>
+        <p>Autoriza el uso temporal de calles, parques o andenes para eventos, ferias o actividades comerciales.</p>
+        <div class="tramite-datos">Costo: Según evento · Tiempo de respuesta: 15 días hábiles</div>
+      </div>
+
+      <div class="tarjeta tramite">
+        <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+        <h4>Certificado de estratificación</h4>
+        <p>Indica el estrato socioeconómico de una vivienda. Se usa para servicios públicos, matrículas y subsidios.</p>
+        <div class="tramite-datos">Costo: Gratuito · Tiempo de respuesta: 5 días hábiles</div>
+      </div>
+
+      <div class="tarjeta tramite">
+        <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+        <h4>Licencia de construcción</h4>
+        <p>Autoriza construir, ampliar, modificar o demoler una edificación dentro del municipio.</p>
+        <div class="tramite-datos">Costo: Según área · Tiempo de respuesta: 45 días hábiles</div>
+      </div>
+
+      <div class="tarjeta tramite">
+        <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+        <h4>Inscripción a programas sociales</h4>
+        <p>Permite inscribirse en los programas municipales para adultos mayores, madres cabeza de familia y personas con discapacidad.</p>
+        <div class="tramite-datos">Costo: Gratuito · Tiempo de respuesta: 15 días hábiles</div>
+      </div>
+
+    </div>
+
+    <!-- E09: enlace "clic aquí" -->
+    <p style="margin-top: 24px;">Si no encuentras el trámite que buscas, <a href="pqrs.html">clic aquí</a>.</p>
+
+  </div>
+</div>
+
+<!-- E02: pie de página hecho con div, sin footer -->
+<div class="pie">
+  <div class="contenedor pie-columnas">
+    <div class="pie-col">
+      <div class="pie-titulo">Alcaldía Municipal de Valleclaro</div>
+      <p>Palacio Municipal, Calle 10 # 5-20, Parque Principal</p>
+      <p>Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Contacto</div>
+      <p>Teléfono: (000) 123 4567</p>
+      <p>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Enlaces de interés</div>
+      <!-- E09: enlaces "clic aquí" en el pie de página -->
+      <p>Transparencia y acceso a la información: <a href="descargas.html">clic aquí</a></p>
+      <p>Peticiones, quejas y reclamos: <a href="pqrs.html">clic aquí</a></p>
+      <p>Preguntas frecuentes: <a href="faq.html">clic aquí</a></p>
+    </div>
+  </div>
+  <div class="contenedor pie-aviso">Sitio académico ficticio. Proyecto de Accesibilidad y Usabilidad.</div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

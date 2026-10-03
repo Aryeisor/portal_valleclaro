@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- E01: html sin atributo lang -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- E07: todas las pestañas se titulan "Inicio" -->
+<title>Inicio</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- E03: no hay enlace para saltar al contenido -->
+<!-- E02: barra superior hecha con div -->
+<div class="barra-superior">
+  <div class="contenedor">Línea de atención: (000) 123 4567</div>
+</div>
+
+<!-- E02: encabezado hecho con div, sin header -->
+<div class="encabezado">
+  <div class="contenedor encabezado-interno">
+    <a href="index.html">
+      <!-- E10: logo sin alt, el nombre de la alcaldía está dentro de la imagen -->
+      <img src="img/logo.svg" width="380" height="96">
+    </a>
+    <div class="lema">Valleclaro, un municipio que te escucha</div>
+  </div>
+</div>
+
+<!-- E02: menú hecho con div, sin nav -->
+<div class="menu">
+  <div class="contenedor">
+    <!-- E14: el menú no marca la página actual -->
+    <ul class="menu-lista">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <!-- E06: submenú de Trámites que solo abre con el mouse (hover) -->
+      <li class="menu-desplegable">
+        <a href="tramites.html">Trámites &#9662;</a>
+        <ul class="submenu">
+          <li><a href="tramite-certificado-residencia.html">Certificado de residencia</a></li>
+          <li><a href="tramites.html#paz-y-salvo">Paz y salvo predial</a></li>
+          <li><a href="tramites.html">Ver todos los trámites</a></li>
+        </ul>
+      </li>
+      <li><a href="pqrs.html">PQRS</a></li>
+      <li><a href="faq.html">Preguntas frecuentes</a></li>
+      <li><a href="descargas.html">Descargas</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- E14: sin migas de pan -->
+<!-- E02: contenido principal en div, sin main ni h1 -->
+<div class="contenido">
+  <div class="contenedor">
+
+    <!-- E02: título de la página hecho con div, sin h1 -->
+    <div class="titulo-pagina">Preguntas frecuentes</div>
+    <p class="intro">Haga clic en una pregunta para ver la respuesta.</p>
+
+    <!-- E02: categoría hecha con div, sin h2 -->
+    <div class="faq-categoria">PQRS</div>
+
+    <div class="faq-item">
+      <!-- E20: pregunta con div onclick, no se puede abrir con el teclado -->
+      <div class="faq-pregunta" onclick="abrirPregunta(this)">¿Cuánto tarda la respuesta?</div>
+      <div class="faq-respuesta">Las peticiones se responden en máximo 15 días hábiles, según la Ley 1755 de 2015. Las solicitudes de documentos e información tienen un plazo de 10 días hábiles y las consultas, de 30 días hábiles.</div>
+    </div>
+    <div class="faq-item">
+      <!-- E20: pregunta con div onclick, no se puede abrir con el teclado -->
+      <div class="faq-pregunta" onclick="abrirPregunta(this)">¿Cómo consulto el estado de mi radicado?</div>
+      <div class="faq-respuesta">Comuníquese con la línea de atención (000) 123 4567 o escriba a contactenos@valleclaro.ejemplo indicando su número de radicado. También puede preguntar en la ventanilla de atención al ciudadano del Palacio Municipal.</div>
+    </div>
+    <div class="faq-item">
+      <!-- E20: pregunta con div onclick, no se puede abrir con el teclado -->
+      <div class="faq-pregunta" onclick="abrirPregunta(this)">¿Puedo radicar de forma anónima?</div>
+      <div class="faq-respuesta">Sí. En el formulario PQRS marque la casilla "Enviar de forma anónima". Tenga en cuenta que, sin datos de contacto, la respuesta solo se publicará en la cartelera de la alcaldía.</div>
+    </div>
+
+    <!-- E02: categoría hecha con div, sin h2 -->
+    <div class="faq-categoria">Trámites</div>
+
+    <div class="faq-item">
+      <!-- E20: pregunta con div onclick, no se puede abrir con el teclado -->
+      <div class="faq-pregunta" onclick="abrirPregunta(this)">¿Qué documentos necesito para el certificado de residencia?</div>
+      <div class="faq-respuesta">Copia de la cédula, un recibo de servicio público a su nombre o a nombre del arrendador y el certificado de la Junta de Acción Comunal de su barrio o vereda.</div>
+    </div>
+    <div class="faq-item">
+      <!-- E20: pregunta con div onclick, no se puede abrir con el teclado -->
+      <div class="faq-pregunta" onclick="abrirPregunta(this)">¿Puedo hacer trámites en línea?</div>
+      <div class="faq-respuesta">Sí. El certificado de residencia y las PQRS se pueden radicar en línea. Los demás trámites se inician en la ventanilla de atención al ciudadano del Palacio Municipal.</div>
+    </div>
+
+    <!-- E02: categoría hecha con div, sin h2 -->
+    <div class="faq-categoria">Impuestos</div>
+
+    <div class="faq-item">
+      <!-- E20: pregunta con div onclick, no se puede abrir con el teclado -->
+      <div class="faq-pregunta" onclick="abrirPregunta(this)">¿Dónde pago el predial?</div>
+      <div class="faq-respuesta">En la Tesorería del Palacio Municipal o en los bancos aliados, presentando la factura del impuesto predial. Si no tiene la factura, puede pedirla en la Tesorería con el número del predio.</div>
+    </div>
+    <div class="faq-item">
+      <!-- E20: pregunta con div onclick, no se puede abrir con el teclado -->
+      <div class="faq-pregunta" onclick="abrirPregunta(this)">¿Hasta cuándo va el descuento?</div>
+      <div class="faq-respuesta">El descuento del 10 % por pronto pago del impuesto predial va hasta el 30 de noviembre de 2026.</div>
+    </div>
+
+    <!-- E02: categoría hecha con div, sin h2 -->
+    <div class="faq-categoria">Atención al ciudadano</div>
+
+    <div class="faq-item">
+      <!-- E20: pregunta con div onclick, no se puede abrir con el teclado -->
+      <div class="faq-pregunta" onclick="abrirPregunta(this)">¿Cuál es el horario?</div>
+      <div class="faq-respuesta">Lunes a viernes, de 7:30 a. m. a 12:00 m. y de 2:00 p. m. a 5:30 p. m.</div>
+    </div>
+    <div class="faq-item">
+      <!-- E20: pregunta con div onclick, no se puede abrir con el teclado -->
+      <div class="faq-pregunta" onclick="abrirPregunta(this)">¿Hay atención para personas con discapacidad?</div>
+      <div class="faq-respuesta">Sí. El Palacio Municipal tiene rampa de acceso y una ventanilla preferencial en el primer piso para personas con discapacidad, adultos mayores y gestantes.</div>
+    </div>
+    <div class="faq-item">
+      <!-- E20: pregunta con div onclick, no se puede abrir con el teclado -->
+      <div class="faq-pregunta" onclick="abrirPregunta(this)">¿Dónde queda el Palacio Municipal?</div>
+      <div class="faq-respuesta">En la Calle 10 # 5-20, frente al Parque Principal de Valleclaro.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- E02: pie de página hecho con div, sin footer -->
+<div class="pie">
+  <div class="contenedor pie-columnas">
+    <div class="pie-col">
+      <div class="pie-titulo">Alcaldía Municipal de Valleclaro</div>
+      <p>Palacio Municipal, Calle 10 # 5-20, Parque Principal</p>
+      <p>Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Contacto</div>
+      <p>Teléfono: (000) 123 4567</p>
+      <p>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Enlaces de interés</div>
+      <!-- E09: enlaces "clic aquí" en el pie de página -->
+      <p>Transparencia y acceso a la información: <a href="descargas.html">clic aquí</a></p>
+      <p>Peticiones, quejas y reclamos: <a href="pqrs.html">clic aquí</a></p>
+      <p>Preguntas frecuentes: <a href="faq.html">clic aquí</a></p>
+    </div>
+  </div>
+  <div class="contenedor pie-aviso">Sitio académico ficticio. Proyecto de Accesibilidad y Usabilidad.</div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

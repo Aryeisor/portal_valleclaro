@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- E01: html sin atributo lang -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- E07: todas las pestañas se titulan "Inicio" -->
+<title>Inicio</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- E03: no hay enlace para saltar al contenido -->
+<!-- E02: barra superior hecha con div -->
+<div class="barra-superior">
+  <div class="contenedor">Línea de atención: (000) 123 4567</div>
+</div>
+
+<!-- E02: encabezado hecho con div, sin header -->
+<div class="encabezado">
+  <div class="contenedor encabezado-interno">
+    <a href="index.html">
+      <!-- E10: logo sin alt, el nombre de la alcaldía está dentro de la imagen -->
+      <img src="img/logo.svg" width="380" height="96">
+    </a>
+    <div class="lema">Valleclaro, un municipio que te escucha</div>
+  </div>
+</div>
+
+<!-- E02: menú hecho con div, sin nav -->
+<div class="menu">
+  <div class="contenedor">
+    <ul class="menu-lista">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <!-- E06: submenú de Trámites que solo abre con el mouse (hover) -->
+      <li class="menu-desplegable">
+        <a href="tramites.html">Trámites &#9662;</a>
+        <ul class="submenu">
+          <li><a href="tramite-certificado-residencia.html">Certificado de residencia</a></li>
+          <li><a href="tramites.html#paz-y-salvo">Paz y salvo predial</a></li>
+          <li><a href="tramites.html">Ver todos los trámites</a></li>
+        </ul>
+      </li>
+      <li><a href="pqrs.html">PQRS</a></li>
+      <li><a href="faq.html">Preguntas frecuentes</a></li>
+      <li><a href="descargas.html">Descargas</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- E02: contenido principal en div, sin main ni h1 -->
+<div class="contenido">
+  <div class="contenedor">
+
+    <!-- E11: carrusel automático que cambia cada 3 segundos, sin botón de pausa -->
+    <div class="carrusel">
+      <!-- E10: imagen sin alt y con el texto del banner dentro de la imagen -->
+      <img src="img/banner-1.svg" class="activa" width="1200" height="400">
+      <!-- E10: imagen sin alt y con el texto del banner dentro de la imagen -->
+      <img src="img/banner-2.svg" width="1200" height="400">
+      <!-- E10: imagen sin alt y con el texto del banner dentro de la imagen -->
+      <img src="img/banner-3.svg" width="1200" height="400">
+    </div>
+    <div class="carrusel-pie">
+      <!-- E09: enlace "Ver más" que no dice a dónde lleva -->
+      <a class="boton" href="faq.html">Ver más</a>
+    </div>
+
+    <!-- E02: título de sección hecho con div, sin h2 -->
+    <div class="titulo-seccion">Accesos rápidos</div>
+    <div class="rejilla-4">
+      <div class="tarjeta acceso">
+        <div class="acceso-icono">C</div>
+        <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+        <h4>Certificado de residencia</h4>
+        <p>Solicita el documento que certifica que vives en Valleclaro.</p>
+        <!-- E09: enlace "Clic aquí" -->
+        <a href="tramite-certificado-residencia.html">Clic aquí</a>
+      </div>
+      <div class="tarjeta acceso">
+        <div class="acceso-icono">P</div>
+        <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+        <h4>Radicar una PQRS</h4>
+        <p>Envía tu petición, queja, reclamo, sugerencia o denuncia.</p>
+        <!-- E09: enlace "Clic aquí" -->
+        <a href="pqrs.html">Clic aquí</a>
+      </div>
+      <div class="tarjeta acceso">
+        <div class="acceso-icono">$</div>
+        <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+        <h4>Paz y salvo predial</h4>
+        <p>Consulta cómo obtener el paz y salvo del impuesto predial.</p>
+        <!-- E09: enlace "Clic aquí" -->
+        <a href="tramites.html#paz-y-salvo">Clic aquí</a>
+      </div>
+      <div class="tarjeta acceso">
+        <div class="acceso-icono">D</div>
+        <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+        <h4>Descargar formatos</h4>
+        <p>Formatos, guías e informes de la alcaldía.</p>
+        <!-- E09: enlace "Clic aquí" -->
+        <a href="descargas.html">Clic aquí</a>
+      </div>
+    </div>
+
+    <!-- E02: título de sección hecho con div, sin h2 -->
+    <div class="titulo-seccion">Últimas noticias</div>
+    <div class="rejilla-3">
+      <div class="tarjeta">
+        <!-- E10: imagen de noticia sin alt -->
+        <img src="img/noticia-1.svg" width="600" height="400">
+        <div class="tarjeta-cuerpo">
+          <div class="fecha">28 sep 2026</div>
+          <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+          <h4>Descuento del 10 % por pronto pago del predial</h4>
+          <p>Paga el impuesto predial antes del 30 de noviembre y ahorra el 10 %.</p>
+          <!-- E09: enlace "Ver más" -->
+          <a href="noticias.html">Ver más</a>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <!-- E10: imagen de noticia sin alt -->
+        <img src="img/noticia-2.svg" width="600" height="400">
+        <div class="tarjeta-cuerpo">
+          <div class="fecha">24 sep 2026</div>
+          <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+          <h4>Jornada de vacunación en el barrio El Prado</h4>
+          <p>Vacunas gratuitas para niños, adultos mayores y gestantes en el salón comunal.</p>
+          <!-- E09: enlace "Ver más" -->
+          <a href="noticias.html">Ver más</a>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <!-- E10: imagen de noticia sin alt -->
+        <img src="img/noticia-3.svg" width="600" height="400">
+        <div class="tarjeta-cuerpo">
+          <div class="fecha">20 sep 2026</div>
+          <!-- E02: salto de jerarquía, se usa h4 sin h1, h2 ni h3 -->
+          <h4>Inicia la pavimentación de la Carrera 8</h4>
+          <p>Las obras entre las calles 5 y 12 tendrán cierres parciales durante tres meses.</p>
+          <!-- E09: enlace "Ver más" -->
+          <a href="noticias.html">Ver más</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- E02: título de sección hecho con div, sin h2 -->
+    <div class="titulo-seccion">Horarios y canales de atención</div>
+    <div class="rejilla-3">
+      <div class="canal">
+        <!-- E02: salto de jerarquía, se usa h5 sin h1 a h4 -->
+        <h5>Presencial</h5>
+        <p>Palacio Municipal, Calle 10 # 5-20, Parque Principal.</p>
+        <p>Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+      </div>
+      <div class="canal">
+        <!-- E02: salto de jerarquía, se usa h5 sin h1 a h4 -->
+        <h5>Telefónico</h5>
+        <p>Línea de atención: (000) 123 4567.</p>
+        <p>En el mismo horario de atención presencial.</p>
+      </div>
+      <div class="canal">
+        <!-- E02: salto de jerarquía, se usa h5 sin h1 a h4 -->
+        <h5>En línea</h5>
+        <p>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></p>
+        <!-- E09: enlace "Clic aquí" -->
+        <p>Para radicar una PQRS en línea <a href="pqrs.html">clic aquí</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- E02: pie de página hecho con div, sin footer -->
+<div class="pie">
+  <div class="contenedor pie-columnas">
+    <div class="pie-col">
+      <div class="pie-titulo">Alcaldía Municipal de Valleclaro</div>
+      <p>Palacio Municipal, Calle 10 # 5-20, Parque Principal</p>
+      <p>Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Contacto</div>
+      <p>Teléfono: (000) 123 4567</p>
+      <p>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></p>
+    </div>
+    <div class="pie-col">
+      <div class="pie-titulo">Enlaces de interés</div>
+      <!-- E09: enlaces "clic aquí" en el pie de página -->
+      <p>Transparencia y acceso a la información: <a href="descargas.html">clic aquí</a></p>
+      <p>Peticiones, quejas y reclamos: <a href="pqrs.html">clic aquí</a></p>
+      <p>Preguntas frecuentes: <a href="faq.html">clic aquí</a></p>
+    </div>
+  </div>
+  <div class="contenedor pie-aviso">Sitio académico ficticio. Proyecto de Accesibilidad y Usabilidad.</div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
