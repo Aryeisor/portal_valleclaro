@@ -274,3 +274,79 @@
 @media (min-width: 48rem) {
   .pie-columnas { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ---------- Banner principal (inicio) ---------- */
+/* E11 corregido: banner estático, sin carrusel ni movimiento automático */
+.banner {
+  position: relative;
+  background: var(--color-primario);
+  color: var(--color-sobre-oscuro);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+.banner img { width: 100%; }
+/* E10 corregido: el mensaje del banner es texto HTML real, no está dentro de la imagen */
+.banner-texto { padding: 1.25rem 1rem 1.5rem; }
+.banner-texto h2 { color: var(--color-sobre-oscuro); font-size: 1.5rem; margin-bottom: 1rem; }
+.banner-texto .resaltado { color: var(--color-foco); }
+.banner .boton { background: var(--color-fondo); color: var(--color-primario); border-color: var(--color-fondo); }
+.banner .boton:hover { background: var(--color-primario-claro); color: var(--color-primario-oscuro); }
+
+/* En pantallas anchas el texto va encima de la zona vacía de la imagen */
+@media (min-width: 64rem) {
+  .banner-texto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 62%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 3rem;
+  }
+  .banner-texto h2 { font-size: 2.25rem; }
+}
+
+/* ---------- Accesos rápidos ---------- */
+.acceso { border-top: 4px solid var(--color-primario); }
+.acceso-icono {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--color-primario-claro);
+  color: var(--color-primario);
+  font-size: 1.375rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.acceso h3 a { display: inline-flex; align-items: center; min-height: var(--area-clic); }
+
+/* ---------- Canales de atención ---------- */
+.canal { background: var(--color-fondo-suave); padding: 1.125rem; border-radius: var(--radio); }
+
+/* ---------- Noticias ---------- */
+.noticia-titulo a { display: inline-flex; align-items: center; min-height: var(--area-clic); }
+.enlace-mas { display: inline-flex; align-items: center; min-height: var(--area-clic); margin-top: 1rem; font-weight: bold; }
+
+/* E12 corregido: la categoría se escribe como texto; el color solo acompaña (texto blanco con contraste de 5:1 o más) */
+.etiqueta {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.125rem 0.625rem;
+  border-radius: 1rem;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  color: var(--color-sobre-oscuro);
+}
+.franja-categoria { height: 6px; }
+.cat-impuestos { background: #B71C1C; }  /* 6.6:1 con texto blanco */
+.cat-salud { background: #2E7D32; }      /* 5.1:1 */
+.cat-obras { background: #A84300; }      /* 6.1:1 */
+.cat-empleo { background: #1565C0; }     /* 5.8:1 */
+.cat-cultura { background: #6A1B9A; }    /* 9.4:1 */
+.cat-servicios { background: #5D4037; }  /* 9.3:1 */
+.rejilla > li > .tarjeta { height: 100%; }
+.tarjeta-cuerpo .noticia-titulo { font-size: 1.125rem; }

@@ -24,9 +24,9 @@
 
     <div class="encabezado-principal">
       <div class="contenedor encabezado-interno">
-        <!-- E10 corregido: logo con alt y nombre de la alcaldía como texto real -->
+        <!-- E10 corregido: el escudo es decorativo dentro del enlace (alt=""), el nombre de la alcaldía es texto real y el enlace se lee "Alcaldía de Valleclaro" -->
         <a class="marca" href="index.html">
-          <img src="img/logo.svg" alt="Escudo de Valleclaro" width="92" height="100">
+          <img src="img/logo.svg" alt="" width="92" height="100">
           <span class="marca-texto">
             <span class="marca-pre">Alcaldía de</span>
             <span class="marca-nombre">Valleclaro</span>
@@ -67,7 +67,93 @@
       <h1>Noticias</h1>
       <p class="intro">Entérate de lo que pasa en Valleclaro.</p>
 
-      <!-- Contenido pendiente: se completa en la fase 2 -->
+      <!-- E02 corregido: listado de noticias con article y un h2 por noticia -->
+      <ul class="rejilla rejilla-3">
+        <li>
+          <article class="tarjeta" id="noticia-predial" aria-labelledby="noticia-predial-titulo">
+            <div class="franja-categoria cat-impuestos"></div>
+            <!-- E10 corregido: imagen de noticia con texto alternativo descriptivo -->
+            <img src="img/noticia-1.svg" alt="Ilustración de un recibo del impuesto predial con el símbolo de porcentaje" width="600" height="400">
+            <div class="tarjeta-cuerpo">
+              <!-- E12 corregido: categoría escrita como texto; el color solo acompaña -->
+              <p class="etiqueta cat-impuestos"><span class="visualmente-oculto">Categoría: </span>Impuestos</p>
+              <p class="tarjeta-meta"><time datetime="2026-09-28">28 sep 2026</time></p>
+              <h2 id="noticia-predial-titulo" class="noticia-titulo">Descuento del 10 % por pronto pago del predial</h2>
+              <p>Quienes paguen el impuesto predial de 2026 antes del 30 de noviembre recibirán un descuento del 10 %. El pago se puede hacer en los bancos aliados o en la Tesorería del Palacio Municipal.</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="tarjeta" id="noticia-vacunacion" aria-labelledby="noticia-vacunacion-titulo">
+            <div class="franja-categoria cat-salud"></div>
+            <!-- E10 corregido: imagen de noticia con texto alternativo descriptivo -->
+            <img src="img/noticia-2.svg" alt="Ilustración de una jeringa de vacunación junto a una cruz de salud" width="600" height="400">
+            <div class="tarjeta-cuerpo">
+              <!-- E12 corregido: categoría escrita como texto; el color solo acompaña -->
+              <p class="etiqueta cat-salud"><span class="visualmente-oculto">Categoría: </span>Salud</p>
+              <p class="tarjeta-meta"><time datetime="2026-09-24">24 sep 2026</time></p>
+              <h2 id="noticia-vacunacion-titulo" class="noticia-titulo">Jornada de vacunación en el barrio El Prado</h2>
+              <p>La Secretaría de Salud aplicará vacunas gratuitas a niños, adultos mayores y gestantes en el salón comunal de El Prado. Solo se debe llevar el documento de identidad y el carné de vacunación.</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="tarjeta" id="noticia-pavimentacion" aria-labelledby="noticia-pavimentacion-titulo">
+            <div class="franja-categoria cat-obras"></div>
+            <!-- E10 corregido: imagen de noticia con texto alternativo descriptivo -->
+            <img src="img/noticia-3.svg" alt="Ilustración de una vía en pavimentación con un cono de obra" width="600" height="400">
+            <div class="tarjeta-cuerpo">
+              <!-- E12 corregido: categoría escrita como texto; el color solo acompaña -->
+              <p class="etiqueta cat-obras"><span class="visualmente-oculto">Categoría: </span>Obras</p>
+              <p class="tarjeta-meta"><time datetime="2026-09-20">20 sep 2026</time></p>
+              <h2 id="noticia-pavimentacion-titulo" class="noticia-titulo">Inicia la pavimentación de la Carrera 8</h2>
+              <p>Las obras entre las calles 5 y 12 durarán cerca de tres meses. Habrá cierres parciales por tramos y desvíos señalizados por la Calle 6 y la Calle 11.</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="tarjeta" id="noticia-empleo" aria-labelledby="noticia-empleo-titulo">
+            <div class="franja-categoria cat-empleo"></div>
+            <!-- E10 corregido: imagen de noticia con texto alternativo descriptivo -->
+            <img src="img/noticia-4.svg" alt="Ilustración de un maletín de trabajo junto a avisos de vacantes" width="600" height="400">
+            <div class="tarjeta-cuerpo">
+              <!-- E12 corregido: categoría escrita como texto; el color solo acompaña -->
+              <p class="etiqueta cat-empleo"><span class="visualmente-oculto">Categoría: </span>Empleo</p>
+              <p class="tarjeta-meta"><time datetime="2026-09-15">15 sep 2026</time></p>
+              <h2 id="noticia-empleo-titulo" class="noticia-titulo">Feria de empleo con 300 vacantes</h2>
+              <p>Más de veinte empresas de la región ofrecerán 300 vacantes en comercio, construcción y servicios. Lleva tu hoja de vida impresa al coliseo municipal.</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="tarjeta" id="noticia-estimulos" aria-labelledby="noticia-estimulos-titulo">
+            <div class="franja-categoria cat-cultura"></div>
+            <!-- E10 corregido: imagen de noticia con texto alternativo descriptivo -->
+            <img src="img/noticia-5.svg" alt="Ilustración de notas musicales sobre un escenario" width="600" height="400">
+            <div class="tarjeta-cuerpo">
+              <!-- E12 corregido: categoría escrita como texto; el color solo acompaña -->
+              <p class="etiqueta cat-cultura"><span class="visualmente-oculto">Categoría: </span>Cultura</p>
+              <p class="tarjeta-meta"><time datetime="2026-09-10">10 sep 2026</time></p>
+              <h2 id="noticia-estimulos-titulo" class="noticia-titulo">Abierta la convocatoria de estímulos culturales</h2>
+              <p>Artistas, grupos y gestores culturales de Valleclaro pueden presentar proyectos de música, danza, teatro y artes plásticas. Las bases están disponibles en la Casa de la Cultura.</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="tarjeta" id="noticia-alumbrado" aria-labelledby="noticia-alumbrado-titulo">
+            <div class="franja-categoria cat-servicios"></div>
+            <!-- E10 corregido: imagen de noticia con texto alternativo descriptivo -->
+            <img src="img/noticia-6.svg" alt="Ilustración de un poste de alumbrado público encendido de noche" width="600" height="400">
+            <div class="tarjeta-cuerpo">
+              <!-- E12 corregido: categoría escrita como texto; el color solo acompaña -->
+              <p class="etiqueta cat-servicios"><span class="visualmente-oculto">Categoría: </span>Servicios</p>
+              <p class="tarjeta-meta"><time datetime="2026-09-05">05 sep 2026</time></p>
+              <h2 id="noticia-alumbrado-titulo" class="noticia-titulo">Plan de mantenimiento del alumbrado público</h2>
+              <p>Durante septiembre y octubre se revisarán y cambiarán las luminarias dañadas en todos los barrios. Los ciudadanos pueden reportar lámparas apagadas a través de una PQRS.</p>
+            </div>
+          </article>
+        </li>
+      </ul>
 
     </div>
   </main>

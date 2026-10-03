@@ -24,9 +24,9 @@
 
     <div class="encabezado-principal">
       <div class="contenedor encabezado-interno">
-        <!-- E10 corregido: logo con alt y nombre de la alcaldía como texto real -->
+        <!-- E10 corregido: el escudo es decorativo dentro del enlace (alt=""), el nombre de la alcaldía es texto real y el enlace se lee "Alcaldía de Valleclaro" -->
         <a class="marca" href="index.html">
-          <img src="img/logo.svg" alt="Escudo de Valleclaro" width="92" height="100">
+          <img src="img/logo.svg" alt="" width="92" height="100">
           <span class="marca-texto">
             <span class="marca-pre">Alcaldía de</span>
             <span class="marca-nombre">Valleclaro</span>
@@ -66,7 +66,123 @@
       <!-- E02 corregido: un solo h1 por página (oculto visualmente en el inicio, que conserva el diseño de antes) -->
       <h1 class="visualmente-oculto">Portal de la Alcaldía Municipal de Valleclaro</h1>
 
-      <!-- Contenido pendiente: se completa en la fase 2 -->
+      <!-- E11 corregido: banner estático en lugar del carrusel automático -->
+      <section class="banner" aria-labelledby="titulo-banner">
+        <!-- E10 corregido: imagen decorativa con alt vacío; el mensaje está como texto HTML -->
+        <img src="img/banner-predial.svg" alt="" width="1200" height="400">
+        <div class="banner-texto">
+          <h2 id="titulo-banner">Paga tu impuesto predial con <span class="resaltado">10 % de descuento</span> hasta el 30 de noviembre</h2>
+          <p>
+            <!-- E09 corregido: el botón dice a dónde lleva, en lugar de "Ver más" -->
+            <a class="boton" href="faq.html#pago-predial">Ver cómo pagar el impuesto predial</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- E02 corregido: secciones con h2 y tarjetas con h3 -->
+      <section class="seccion" aria-labelledby="titulo-accesos">
+        <h2 id="titulo-accesos">Accesos rápidos</h2>
+        <ul class="rejilla rejilla-4">
+          <li class="tarjeta acceso">
+            <div class="tarjeta-cuerpo">
+              <span class="acceso-icono" aria-hidden="true">C</span>
+              <!-- E09 corregido: el enlace dice a dónde lleva, en lugar de "Clic aquí" -->
+              <h3><a href="tramite-certificado-residencia.html">Solicitar certificado de residencia</a></h3>
+              <p>Solicita el documento que certifica que vives en Valleclaro.</p>
+            </div>
+          </li>
+          <li class="tarjeta acceso">
+            <div class="tarjeta-cuerpo">
+              <span class="acceso-icono" aria-hidden="true">P</span>
+              <!-- E09 corregido: el enlace dice a dónde lleva, en lugar de "Clic aquí" -->
+              <h3><a href="pqrs.html">Radicar una PQRS</a></h3>
+              <p>Envía tu petición, queja, reclamo, sugerencia o denuncia.</p>
+            </div>
+          </li>
+          <li class="tarjeta acceso">
+            <div class="tarjeta-cuerpo">
+              <span class="acceso-icono" aria-hidden="true">$</span>
+              <!-- E09 corregido: el enlace dice a dónde lleva, en lugar de "Clic aquí" -->
+              <h3><a href="tramites.html#paz-y-salvo">Consultar el paz y salvo predial</a></h3>
+              <p>Consulta cómo obtener el paz y salvo del impuesto predial.</p>
+            </div>
+          </li>
+          <li class="tarjeta acceso">
+            <div class="tarjeta-cuerpo">
+              <span class="acceso-icono" aria-hidden="true">D</span>
+              <!-- E09 corregido: el enlace dice a dónde lleva, en lugar de "Clic aquí" -->
+              <h3><a href="descargas.html">Descargar formatos y documentos</a></h3>
+              <p>Formatos, guías e informes de la alcaldía.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="seccion" aria-labelledby="titulo-noticias">
+        <h2 id="titulo-noticias">Últimas noticias</h2>
+        <ul class="rejilla rejilla-3">
+          <li>
+            <article class="tarjeta">
+              <!-- E10 corregido: imagen de noticia con texto alternativo descriptivo -->
+              <img src="img/noticia-1.svg" alt="Ilustración de un recibo del impuesto predial con el símbolo de porcentaje" width="600" height="400">
+              <div class="tarjeta-cuerpo">
+                <p class="tarjeta-meta"><time datetime="2026-09-28">28 sep 2026</time></p>
+                <!-- E09 corregido: el título es el enlace y dice a dónde lleva, en lugar de "Ver más" -->
+                <h3 class="noticia-titulo"><a href="noticias.html#noticia-predial">Descuento del 10 % por pronto pago del predial</a></h3>
+                <p>Paga el impuesto predial antes del 30 de noviembre y ahorra el 10 %.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="tarjeta">
+              <!-- E10 corregido: imagen de noticia con texto alternativo descriptivo -->
+              <img src="img/noticia-2.svg" alt="Ilustración de una jeringa de vacunación junto a una cruz de salud" width="600" height="400">
+              <div class="tarjeta-cuerpo">
+                <p class="tarjeta-meta"><time datetime="2026-09-24">24 sep 2026</time></p>
+                <!-- E09 corregido: el título es el enlace y dice a dónde lleva, en lugar de "Ver más" -->
+                <h3 class="noticia-titulo"><a href="noticias.html#noticia-vacunacion">Jornada de vacunación en el barrio El Prado</a></h3>
+                <p>Vacunas gratuitas para niños, adultos mayores y gestantes en el salón comunal.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="tarjeta">
+              <!-- E10 corregido: imagen de noticia con texto alternativo descriptivo -->
+              <img src="img/noticia-3.svg" alt="Ilustración de una vía en pavimentación con un cono de obra" width="600" height="400">
+              <div class="tarjeta-cuerpo">
+                <p class="tarjeta-meta"><time datetime="2026-09-20">20 sep 2026</time></p>
+                <!-- E09 corregido: el título es el enlace y dice a dónde lleva, en lugar de "Ver más" -->
+                <h3 class="noticia-titulo"><a href="noticias.html#noticia-pavimentacion">Inicia la pavimentación de la Carrera 8</a></h3>
+                <p>Las obras entre las calles 5 y 12 tendrán cierres parciales durante tres meses.</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+        <!-- E09 corregido: enlace descriptivo al listado completo -->
+        <a class="enlace-mas" href="noticias.html">Ver todas las noticias</a>
+      </section>
+
+      <section class="seccion" aria-labelledby="titulo-canales">
+        <h2 id="titulo-canales">Horarios y canales de atención</h2>
+        <ul class="rejilla rejilla-3">
+          <li class="canal">
+            <h3>Presencial</h3>
+            <p>Palacio Municipal, Calle 10 # 5-20, Parque Principal.</p>
+            <p>Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+          </li>
+          <li class="canal">
+            <h3>Telefónico</h3>
+            <p>Línea de atención: (000) 123 4567.</p>
+            <p>En el mismo horario de atención presencial.</p>
+          </li>
+          <li class="canal">
+            <h3>En línea</h3>
+            <p>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></p>
+            <!-- E09 corregido: el enlace dice a dónde lleva, en lugar de "clic aquí" -->
+            <p><a href="pqrs.html">Radicar una PQRS en línea</a></p>
+          </li>
+        </ul>
+      </section>
 
     </div>
   </main>
