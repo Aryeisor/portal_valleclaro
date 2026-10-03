@@ -8,6 +8,8 @@
   <title>Preguntas frecuentes – Alcaldía de Valleclaro</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/componentes.css">
+  <!-- Se carga en el head para aplicar el tamaño y el contraste guardados antes de pintar la página -->
+  <script src="js/preferencias.js"></script>
 </head>
 <body>
 
@@ -19,6 +21,13 @@
     <div class="barra-superior">
       <div class="contenedor barra-superior-interno">
         <p>Línea de atención: (000) 123 4567 · Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+        <!-- Mejora: preferencias de tamaño de texto y alto contraste (js/preferencias.js); sin JavaScript quedan ocultas -->
+        <div class="preferencias" id="preferencias" role="group" aria-label="Preferencias de visualización" hidden>
+          <button type="button" class="boton-pref" id="pref-aumentar">Aumentar texto</button>
+          <button type="button" class="boton-pref" id="pref-restablecer">Restablecer texto</button>
+          <button type="button" class="boton-pref" id="pref-contraste" aria-pressed="false">Alto contraste</button>
+          <p class="visualmente-oculto" id="pref-estado" role="status"></p>
+        </div>
       </div>
     </div>
 
@@ -74,6 +83,7 @@
       <!-- E02 corregido: un solo h1 por página -->
       <h1>Preguntas frecuentes</h1>
 
+      <!-- Nielsen 4: respuestas en "tú", igual que el resto del sitio; la información no cambia -->
       <p class="intro">Elige una pregunta para ver la respuesta. Se abre con clic, con Enter o con la barra espaciadora.</p>
 
       <!-- Índice de categorías para llegar rápido a cada grupo -->
@@ -100,14 +110,14 @@
         <details class="acordeon-item">
           <summary>¿Cómo consulto el estado de mi radicado?</summary>
           <div class="acordeon-respuesta">
-            <p>Comuníquese con la línea de atención (000) 123 4567 o escriba a contactenos@valleclaro.ejemplo indicando su número de radicado. También puede preguntar en la ventanilla de atención al ciudadano del Palacio Municipal.</p>
+            <p>Comunícate con la línea de atención (000) 123 4567 o escribe a contactenos@valleclaro.ejemplo indicando tu número de radicado. También puedes preguntar en la ventanilla de atención al ciudadano del Palacio Municipal.</p>
           </div>
         </details>
         <!-- E20 corregido: acordeón nativo con details/summary; abre y cierra con Enter, Espacio y clic -->
         <details class="acordeon-item">
           <summary>¿Puedo radicar de forma anónima?</summary>
           <div class="acordeon-respuesta">
-            <p>Sí. En el formulario PQRS marque la casilla "Enviar de forma anónima". Tenga en cuenta que, sin datos de contacto, la respuesta solo se publicará en la cartelera de la alcaldía.</p>
+            <p>Sí. En el formulario PQRS marca la casilla "Enviar de forma anónima". Ten en cuenta que, sin datos de contacto, la respuesta solo se publicará en la cartelera de la alcaldía.</p>
           </div>
         </details>
       </section>
@@ -119,7 +129,7 @@
         <details class="acordeon-item">
           <summary>¿Qué documentos necesito para el certificado de residencia?</summary>
           <div class="acordeon-respuesta">
-            <p>Copia de la cédula, un recibo de servicio público a su nombre o a nombre del arrendador y el certificado de la Junta de Acción Comunal de su barrio o vereda.</p>
+            <p>Copia de la cédula, un recibo de servicio público a tu nombre o a nombre del arrendador y el certificado de la Junta de Acción Comunal de tu barrio o vereda.</p>
           </div>
         </details>
         <!-- E20 corregido: acordeón nativo con details/summary; abre y cierra con Enter, Espacio y clic -->
@@ -138,7 +148,7 @@
         <details class="acordeon-item" id="pago-predial">
           <summary>¿Dónde pago el predial?</summary>
           <div class="acordeon-respuesta">
-            <p>En la Tesorería del Palacio Municipal o en los bancos aliados, presentando la factura del impuesto predial. Si no tiene la factura, puede pedirla en la Tesorería con el número del predio.</p>
+            <p>En la Tesorería del Palacio Municipal o en los bancos aliados, presentando la factura del impuesto predial. Si no tienes la factura, puedes pedirla en la Tesorería con el número del predio.</p>
           </div>
         </details>
         <!-- E20 corregido: acordeón nativo con details/summary; abre y cierra con Enter, Espacio y clic -->

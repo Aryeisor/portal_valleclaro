@@ -415,3 +415,20 @@
 /* El título de la tabla no se desplaza con ella en pantallas angostas */
 .caption-fijo { position: sticky; left: 0; display: inline-block; max-width: calc(100vw - 2rem); }
 .tabla-contenedor { margin-top: 1rem; }
+
+/* ---------- Preferencias de visualización (barra superior) ---------- */
+.preferencias { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+.boton-pref {
+  min-height: var(--area-clic);
+  padding: 0.375rem 0.75rem;
+  background: var(--color-fondo);
+  color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+  border-radius: var(--radio);
+  font-size: 0.875rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.boton-pref:hover { background: var(--color-primario-claro); }
+/* El estado activado se ve por el fondo invertido y también lo anuncia aria-pressed */
+.boton-pref[aria-pressed="true"] { background: var(--color-primario); color: var(--color-sobre-oscuro); }

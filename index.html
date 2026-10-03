@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal Alcaldía de Valleclaro – Proyecto de Accesibilidad y Usabilidad</title>
+  <meta name="description" content="Proyecto académico: el portal de una alcaldía ficticia en dos versiones, antes y después de corregir 22 errores de accesibilidad y usabilidad.">
+  <!-- Mismos estilos base (colores, tipografía y foco) que la versión después -->
+  <link rel="stylesheet" href="despues/css/base.css">
+  <style>
+    .saltar {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--color-fondo);
+      color: var(--color-primario);
+      font-weight: bold;
+      border-radius: var(--radio);
+      transform: translateY(-200%);
+    }
+    .saltar:focus { transform: translateY(0); }
+
+    .portada-encabezado { background: var(--color-primario); color: var(--color-sobre-oscuro); padding: 2rem 0; }
+    .portada-encabezado h1 { color: var(--color-sobre-oscuro); margin-bottom: 0.5rem; }
+    .portada-encabezado p { color: #E8F0F8; font-size: 1.0625rem; }
+
+    main { padding: 2rem 0 3rem; }
+    main > .contenedor > p,
+    main ul.puntos { max-width: 48rem; }
+    main ul.puntos { padding-left: 1.5rem; margin: 0.75rem 0 0; }
+    main ul.puntos li + li { margin-top: 0.375rem; }
+    main h2 { margin-top: 2rem; }
+
+    .versiones { list-style: none; padding: 0; margin-top: 1rem; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 48rem) {
+      .versiones { grid-template-columns: 1fr 1fr; }
+    }
+    .version {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      height: 100%;
+      padding: 1.5rem;
+      border: 2px solid var(--color-borde-suave);
+      border-top: 0.5rem solid var(--color-borde);
+      border-radius: var(--radio);
+    }
+    .version-antes { border-top-color: var(--color-error); }
+    .version-despues { border-top-color: var(--color-secundario); }
+    .version h3 { font-size: 1.25rem; margin: 0; }
+    .version h3 a { display: inline-flex; align-items: center; min-height: var(--area-clic); }
+
+    footer { background: var(--color-primario-oscuro); color: var(--color-sobre-oscuro); padding: 1.25rem 0; text-align: center; font-size: 0.9375rem; }
+  </style>
+</head>
+<body>
+
+  <a class="saltar" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="portada-encabezado">
+    <div class="contenedor">
+      <h1>Portal Alcaldía de Valleclaro – Proyecto de Accesibilidad y Usabilidad</h1>
+      <p>Proyecto académico de la materia Accesibilidad y Usabilidad.</p>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <div class="contenedor">
+      <p>Este proyecto construye el portal web de una alcaldía ficticia, la Alcaldía Municipal de Valleclaro, en dos versiones con el mismo contenido. La primera tiene 22 errores de accesibilidad y usabilidad sembrados a propósito, como los de un sitio hecho con prisa. La segunda corrige cada uno de ellos.</p>
+      <p>El objetivo es mostrar, con evidencia medible, cómo mejora un portal de servicios al ciudadano cuando se aplican las pautas WCAG 2.1 nivel AA y las 10 heurísticas de usabilidad de Nielsen.</p>
+
+      <h2 id="titulo-versiones">Las dos versiones</h2>
+      <ul class="versiones" aria-labelledby="titulo-versiones">
+        <li>
+          <article class="version version-antes" aria-labelledby="enlace-antes">
+            <h3><a id="enlace-antes" href="antes/index.html">Versión antes: con 22 errores sembrados</a></h3>
+            <p>Imágenes sin texto alternativo, texto gris con poco contraste, menú que solo abre con el mouse, formulario sin etiquetas que borra los datos, carrusel automático, entre otros. Cada error está marcado en el código con su código, de E01 a E22.</p>
+          </article>
+        </li>
+        <li>
+          <article class="version version-despues" aria-labelledby="enlace-despues">
+            <h3><a id="enlace-despues" href="despues/index.html">Versión después: corregida según WCAG 2.1 AA</a></h3>
+            <p>El mismo sitio con los 22 errores corregidos, más una declaración de accesibilidad, preferencias de tamaño de texto y alto contraste, filtro de trámites y documentos PDF accesibles.</p>
+          </article>
+        </li>
+      </ul>
+
+      <h2>Cómo comparar</h2>
+      <ul class="puntos">
+        <li>Abre la misma página en las dos versiones e intenta usarla solo con el teclado (Tab, Enter, Espacio y Escape).</li>
+        <li>Prueba el formulario de PQRS: envíalo vacío, con un correo mal escrito y completo.</li>
+        <li>Mira las páginas en el celular o con el zoom del navegador al 200 %.</li>
+      </ul>
+
+      <!-- Integrantes del equipo: los agrega el equipo -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p>Sitio académico ficticio. Proyecto de Accesibilidad y Usabilidad.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

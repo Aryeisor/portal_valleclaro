@@ -8,6 +8,8 @@
   <title>Declaración de accesibilidad – Alcaldía de Valleclaro</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/componentes.css">
+  <!-- Se carga en el head para aplicar el tamaño y el contraste guardados antes de pintar la página -->
+  <script src="js/preferencias.js"></script>
 </head>
 <body>
 
@@ -19,6 +21,13 @@
     <div class="barra-superior">
       <div class="contenedor barra-superior-interno">
         <p>Línea de atención: (000) 123 4567 · Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+        <!-- Mejora: preferencias de tamaño de texto y alto contraste (js/preferencias.js); sin JavaScript quedan ocultas -->
+        <div class="preferencias" id="preferencias" role="group" aria-label="Preferencias de visualización" hidden>
+          <button type="button" class="boton-pref" id="pref-aumentar">Aumentar texto</button>
+          <button type="button" class="boton-pref" id="pref-restablecer">Restablecer texto</button>
+          <button type="button" class="boton-pref" id="pref-contraste" aria-pressed="false">Alto contraste</button>
+          <p class="visualmente-oculto" id="pref-estado" role="status"></p>
+        </div>
       </div>
     </div>
 
@@ -72,8 +81,67 @@
 
       <!-- E02 corregido: un solo h1 por página -->
       <h1>Declaración de accesibilidad</h1>
+      <p class="intro">La Alcaldía Municipal de Valleclaro quiere que todas las personas puedan usar este portal, incluidas las personas con discapacidad y quienes usan lectores de pantalla, solo el teclado, ampliación de pantalla o celular.</p>
 
-      <!-- Contenido pendiente: se completa en la fase 6 -->
+      <!-- Mejora: declaración de accesibilidad según la sección 5.8 del plan (no existe en la versión antes) -->
+      <div class="detalle-tramite">
+
+        <section class="seccion" aria-labelledby="nivel">
+          <h2 id="nivel">Nivel de conformidad</h2>
+          <p>Este portal busca cumplir las <strong>Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1, nivel AA</strong>, el mismo nivel que la Resolución 1519 de 2020 del Ministerio TIC toma como referencia para las entidades públicas en Colombia.</p>
+          <p><strong>Estado:</strong> parcialmente conforme. La mayoría de los criterios se cumplen; las excepciones conocidas están en la sección «Limitaciones conocidas».</p>
+        </section>
+
+        <section class="seccion" aria-labelledby="que-se-probo">
+          <h2 id="que-se-probo">Qué se probó</h2>
+          <ul class="lista">
+            <li><strong>Herramientas automáticas:</strong> Lighthouse, WAVE y axe DevTools en las 8 páginas.</li>
+            <li><strong>Contraste de color:</strong> cada combinación de texto y fondo, con un mínimo de 4.5:1 para texto y 3:1 para bordes de campos y botones.</li>
+            <li><strong>Código:</strong> validador HTML del W3C.</li>
+            <li><strong>Solo teclado:</strong> que todo se alcance con Tab, que el foco siempre se vea y que el menú, el acordeón y el formulario funcionen con Enter, Espacio y Escape.</li>
+            <li><strong>Lector de pantalla:</strong> NVDA, con énfasis en el formulario PQRS.</li>
+            <li><strong>Ampliación y celular:</strong> zoom al 200 % y pantallas desde 320 píxeles de ancho, sin desplazamiento horizontal de la página.</li>
+            <li><strong>Prueba con usuarios:</strong> de 3 a 5 personas realizaron tareas como encontrar el costo de un trámite y radicar una queja.</li>
+          </ul>
+        </section>
+
+        <section class="seccion" aria-labelledby="limitaciones">
+          <h2 id="limitaciones">Limitaciones conocidas</h2>
+          <ul class="lista">
+            <li>La tabla de documentos de la página Descargas se desplaza horizontalmente dentro de su recuadro en pantallas angostas. La página completa no se desplaza.</li>
+            <li>El formulario PQRS es una simulación académica: no envía datos y el número de radicado es ficticio.</li>
+            <li>La sesión del formulario PQRS dura 2 minutos con fines de demostración. Un minuto antes aparece un aviso para pedir más tiempo.</li>
+            <li>Las preferencias de tamaño de texto y alto contraste se guardan solo en este navegador. Si el navegador bloquea el almacenamiento, se pierden al cerrar la página.</li>
+            <li>El sitio se probó con NVDA en Windows. Aún no se ha probado con JAWS, VoiceOver ni TalkBack.</li>
+          </ul>
+        </section>
+
+        <section class="seccion" aria-labelledby="revision">
+          <h2 id="revision">Fecha de la última revisión</h2>
+          <p>Esta declaración se revisó el <time datetime="2026-10-03">3 de octubre de 2026</time>.</p>
+        </section>
+
+        <section class="seccion" aria-labelledby="reportar">
+          <h2 id="reportar">Cómo reportar un problema de accesibilidad</h2>
+          <p>Si encuentras una barrera para usar el portal, cuéntanos qué página era y qué pasó. Te responderemos en un plazo máximo de 15 días hábiles.</p>
+          <ul class="lista">
+            <li><a href="pqrs.html">Reportar un problema de accesibilidad con una PQRS</a> (elige el tipo «Queja» o «Sugerencia» y escribe «Accesibilidad» en el asunto).</li>
+            <li>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></li>
+            <li>Teléfono: (000) 123 4567, lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</li>
+          </ul>
+        </section>
+
+        <section class="seccion" aria-labelledby="normas">
+          <h2 id="normas">Marco normativo</h2>
+          <ul class="lista">
+            <li><strong>Ley 1618 de 2013:</strong> garantiza los derechos de las personas con discapacidad, incluido el acceso a la información.</li>
+            <li><strong>NTC 5854:</strong> norma técnica colombiana de accesibilidad para páginas web.</li>
+            <li><strong>Resolución 1519 de 2020 del Ministerio TIC:</strong> lineamientos de accesibilidad web para entidades públicas.</li>
+            <li><strong>Ley 1712 de 2014:</strong> transparencia y acceso a la información pública.</li>
+          </ul>
+        </section>
+
+      </div>
 
     </div>
   </main>

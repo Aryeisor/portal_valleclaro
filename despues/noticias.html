@@ -8,6 +8,8 @@
   <title>Noticias – Alcaldía de Valleclaro</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/componentes.css">
+  <!-- Se carga en el head para aplicar el tamaño y el contraste guardados antes de pintar la página -->
+  <script src="js/preferencias.js"></script>
 </head>
 <body>
 
@@ -19,6 +21,13 @@
     <div class="barra-superior">
       <div class="contenedor barra-superior-interno">
         <p>Línea de atención: (000) 123 4567 · Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+        <!-- Mejora: preferencias de tamaño de texto y alto contraste (js/preferencias.js); sin JavaScript quedan ocultas -->
+        <div class="preferencias" id="preferencias" role="group" aria-label="Preferencias de visualización" hidden>
+          <button type="button" class="boton-pref" id="pref-aumentar">Aumentar texto</button>
+          <button type="button" class="boton-pref" id="pref-restablecer">Restablecer texto</button>
+          <button type="button" class="boton-pref" id="pref-contraste" aria-pressed="false">Alto contraste</button>
+          <p class="visualmente-oculto" id="pref-estado" role="status"></p>
+        </div>
       </div>
     </div>
 

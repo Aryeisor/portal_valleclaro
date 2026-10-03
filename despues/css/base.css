@@ -130,3 +130,42 @@ a:hover { color: var(--color-primario-oscuro); text-decoration-thickness: 0.15em
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------- Alto contraste (activado con js/preferencias.js) ---------- */
+/* Fondo negro, texto blanco y enlaces, títulos y controles en amarillo: todas las combinaciones superan 15:1 */
+html.alto-contraste,
+html.alto-contraste *:not(img):not(svg):not(svg *) {
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  text-shadow: none !important;
+}
+html.alto-contraste a,
+html.alto-contraste a *,
+html.alto-contraste h1,
+html.alto-contraste h2,
+html.alto-contraste h3,
+html.alto-contraste legend,
+html.alto-contraste summary,
+html.alto-contraste button,
+html.alto-contraste .boton,
+html.alto-contraste .marca-nombre,
+html.alto-contraste .resaltado { color: #FFEB3B !important; }
+html.alto-contraste .boton,
+html.alto-contraste button,
+html.alto-contraste input,
+html.alto-contraste select,
+html.alto-contraste textarea,
+html.alto-contraste .etiqueta { border: 2px solid #FFFFFF !important; }
+html.alto-contraste .boton-pref[aria-pressed="true"] { background-color: #FFEB3B !important; color: #000000 !important; }
+html.alto-contraste .mensaje-error-campo,
+html.alto-contraste .resumen-errores h2,
+html.alto-contraste .resumen-errores a { color: #FF9E9E !important; }
+html.alto-contraste [aria-invalid="true"] { border-color: #FF9E9E !important; }
+html.alto-contraste input[type="checkbox"],
+html.alto-contraste input[type="radio"] { accent-color: #FFEB3B; }
+html.alto-contraste ::placeholder { color: #CCCCCC !important; }
+html.alto-contraste .aviso-sesion::backdrop { background: rgba(0, 0, 0, 0.85); }
+/* El botón de Trámites se ve igual que los demás enlaces del menú */
+html.alto-contraste .menu-boton { border: 0 !important; }
