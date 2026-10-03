@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- E01 corregido: idioma de la página declarado -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- E07 corregido: título único por página -->
+  <title>Certificado de residencia – Alcaldía de Valleclaro</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+  <!-- E03 corregido: enlace para saltar al contenido principal, primer elemento de la página -->
+  <a class="saltar" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- E02 corregido: encabezado en header -->
+  <header>
+    <div class="barra-superior">
+      <div class="contenedor barra-superior-interno">
+        <p>Línea de atención: (000) 123 4567 · Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+      </div>
+    </div>
+
+    <div class="encabezado-principal">
+      <div class="contenedor encabezado-interno">
+        <!-- E10 corregido: logo con alt y nombre de la alcaldía como texto real -->
+        <a class="marca" href="index.html">
+          <img src="img/logo.svg" alt="Escudo de Valleclaro" width="92" height="100">
+          <span class="marca-texto">
+            <span class="marca-pre">Alcaldía de</span>
+            <span class="marca-nombre">Valleclaro</span>
+          </span>
+        </a>
+        <p class="lema">Valleclaro, un municipio que te escucha</p>
+      </div>
+    </div>
+
+    <!-- E02 corregido: menú principal en nav con nombre accesible -->
+    <nav class="menu" aria-label="Principal">
+      <div class="contenedor">
+        <ul class="menu-lista">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li class="menu-desplegable">
+          <!-- E06 corregido: el submenú se abre con un botón con aria-expanded (Enter, Espacio, Escape y mouse; ver js/menu.js) -->
+          <button type="button" class="menu-boton es-actual" aria-expanded="false" aria-controls="submenu-tramites">Trámites</button>
+          <ul class="submenu" id="submenu-tramites">
+          <!-- E14 corregido: la página actual se marca en el menú con aria-current -->
+          <li><a href="tramite-certificado-residencia.html" aria-current="page">Certificado de residencia</a></li>
+          <li><a href="tramites.html#paz-y-salvo">Paz y salvo predial</a></li>
+          <li><a href="tramites.html">Ver todos los trámites</a></li>
+          </ul>
+        </li>
+        <li><a href="pqrs.html">PQRS</a></li>
+        <li><a href="faq.html">Preguntas frecuentes</a></li>
+        <li><a href="descargas.html">Descargas</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- E02 corregido: contenido principal en main, destino del enlace "Saltar al contenido" -->
+  <main id="contenido" class="contenido">
+    <div class="contenedor">
+      <!-- E02 corregido: un solo h1 por página -->
+      <h1>Certificado de residencia</h1>
+
+      <!-- Contenido pendiente: se completa en la fase 3 -->
+
+    </div>
+  </main>
+
+  <!-- E02 corregido: pie de página en footer -->
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-columnas">
+        <div>
+          <h2>Alcaldía Municipal de Valleclaro</h2>
+          <address>
+            <p>Palacio Municipal, Calle 10 # 5-20, Parque Principal</p>
+            <p>Lunes a viernes, 7:30 a. m. a 12:00 m. y 2:00 p. m. a 5:30 p. m.</p>
+          </address>
+        </div>
+        <div>
+          <h2>Contacto</h2>
+          <p>Teléfono: (000) 123 4567</p>
+          <p>Correo: <a href="mailto:contactenos@valleclaro.ejemplo">contactenos@valleclaro.ejemplo</a></p>
+        </div>
+        <div>
+          <h2>Enlaces de interés</h2>
+          <!-- E09 corregido: enlaces que dicen a dónde llevan, en lugar de "clic aquí" -->
+          <ul class="pie-enlaces">
+            <li><a href="descargas.html">Transparencia y acceso a la información</a></li>
+            <li><a href="pqrs.html">Radicar una petición, queja o reclamo (PQRS)</a></li>
+            <li><a href="faq.html">Preguntas frecuentes</a></li>
+            <li><a href="accesibilidad.html">Declaración de accesibilidad</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie-aviso">Sitio académico ficticio. Proyecto de Accesibilidad y Usabilidad.</p>
+    </div>
+  </footer>
+
+  <script src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* ==========================================================
+   Alcaldía Municipal de Valleclaro - base.css (versión "después")
+   Variables de color, tipografía, foco, reset y utilidades.
+   Diseño mobile-first: los estilos base son para celular y se
+   amplían con min-width.
+   ========================================================== */
+
+/* ---------- Variables ---------- */
+/* E04 corregido: paleta con contraste mínimo de 4.5:1 sobre blanco */
+:root {
+  --color-primario: #1F4E79;        /* 8.7:1 sobre blanco */
+  --color-primario-oscuro: #173B5C;
+  --color-primario-claro: #E3EDF6;
+  --color-secundario: #2E7D32;      /* 5.1:1 sobre blanco */
+  --color-texto: #1A1A1A;           /* 17:1 sobre blanco */
+  --color-texto-suave: #4A4A4A;     /* 8.9:1 sobre blanco */
+  --color-error: #B00020;           /* 7.3:1 sobre blanco */
+  --color-foco: #F9A825;
+  --color-foco-sombra: #1A1A1A;
+  --color-fondo: #FFFFFF;
+  --color-fondo-suave: #F4F7FA;
+  --color-borde: #6B7785;           /* 4.6:1, bordes de campos y botones */
+  --color-borde-suave: #D5DDE5;     /* solo separadores decorativos */
+  --color-sobre-oscuro: #FFFFFF;
+
+  --fuente: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radio: 0.25rem;
+  --area-clic: 2.75rem;             /* 44 px */
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body,
+h1, h2, h3, h4,
+p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+
+img,
+svg { display: block; max-width: 100%; height: auto; }
+
+button,
+input,
+select,
+textarea { font: inherit; color: inherit; }
+
+/* ---------- Tipografía ---------- */
+/* Tamaños en rem para que el zoom y las preferencias del navegador funcionen */
+html { font-size: 100%; }
+
+body {
+  font-family: var(--fuente);
+  font-size: 1rem;
+  line-height: 1.5;
+  /* E04 corregido: texto principal #1A1A1A sobre blanco (17:1) */
+  color: var(--color-texto);
+  background: var(--color-fondo);
+}
+
+h1, h2, h3, h4 { line-height: 1.25; color: var(--color-primario); }
+h1 { font-size: 1.75rem; margin-bottom: 1rem; }
+h2 { font-size: 1.375rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+
+p + p { margin-top: 0.75rem; }
+
+/* E04 corregido: enlaces en azul institucional (8.7:1) y subrayados */
+a { color: var(--color-primario); text-decoration: underline; text-underline-offset: 0.15em; }
+a:hover { color: var(--color-primario-oscuro); text-decoration-thickness: 0.15em; }
+
+@media (min-width: 48rem) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+}
+
+/* ---------- Foco ---------- */
+/* E05 corregido: foco visible de 3 px amarillo con sombra oscura, se ve sobre fondos claros y oscuros */
+:focus-visible {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 0;
+  box-shadow: 0 0 0 6px var(--color-foco-sombra);
+}
+
+/* Elementos que reciben foco por código (h1 de confirmación, resumen de errores) */
+[tabindex="-1"]:focus { outline: none; }
+[tabindex="-1"]:focus-visible {
+  outline: 3px solid var(--color-foco);
+  box-shadow: 0 0 0 6px var(--color-foco-sombra);
+}
+
+/* ---------- Diseño adaptable ---------- */
+/* E08 corregido: contenedor fluido con ancho máximo, sin scroll horizontal a 320 px */
+.contenedor {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 48rem) {
+  .contenedor { padding: 0 1.25rem; }
+}
+
+/* ---------- Utilidades ---------- */
+/* Oculta visualmente pero sigue disponible para lectores de pantalla */
+.visualmente-oculto {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* ---------- Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

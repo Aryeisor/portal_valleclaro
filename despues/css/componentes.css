@@ -1,0 +1,276 @@
+/* ==========================================================
+   Alcaldía Municipal de Valleclaro - componentes.css (versión "después")
+   Encabezado, menú, migas de pan, tarjetas, botones, tabla,
+   acordeón y pie de página. Mobile-first.
+   ========================================================== */
+
+/* ---------- Saltar al contenido ---------- */
+/* E03 corregido: enlace para saltar al contenido, visible al recibir foco con Tab */
+.saltar {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--color-fondo);
+  color: var(--color-primario);
+  font-weight: bold;
+  border-radius: var(--radio);
+  transform: translateY(-200%);
+}
+.saltar:focus { transform: translateY(0); }
+
+/* ---------- Barra superior ---------- */
+.barra-superior {
+  background: var(--color-fondo-suave);
+  border-bottom: 1px solid var(--color-borde-suave);
+  font-size: 0.875rem;
+  /* E04 corregido: teléfono y horario con texto oscuro (8.9:1) */
+  color: var(--color-texto-suave);
+}
+.barra-superior-interno {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado-principal { background: var(--color-primario); color: var(--color-sobre-oscuro); }
+.encabezado-interno {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-sobre-oscuro);
+  text-decoration: none;
+  align-self: flex-start;
+}
+.marca:hover { color: var(--color-sobre-oscuro); }
+.marca img { width: 3.5rem; height: auto; }
+.marca-texto { display: flex; flex-direction: column; line-height: 1.1; }
+.marca-pre { font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.marca-nombre { font-size: 1.75rem; font-weight: bold; }
+.lema { font-style: italic; font-size: 0.9375rem; color: #E8F0F8; }
+
+@media (min-width: 48rem) {
+  .encabezado-interno { flex-direction: row; align-items: center; justify-content: space-between; }
+  .marca img { width: 4.75rem; }
+  .marca-pre { font-size: 0.9375rem; }
+  .marca-nombre { font-size: 2.25rem; }
+  .lema { font-size: 1rem; }
+}
+
+/* ---------- Menú principal ---------- */
+.menu { background: var(--color-primario-oscuro); }
+.menu-lista {
+  list-style: none;
+  padding: 0.25rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.menu-lista > li { position: relative; }
+.menu-lista a,
+.menu-boton {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  width: 100%;
+  min-height: var(--area-clic);
+  padding: 0.5rem 0.75rem;
+  color: var(--color-sobre-oscuro);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.menu-boton {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+.menu-lista a:hover,
+.menu-boton:hover { background: var(--color-primario); text-decoration: underline; }
+
+/* Flecha del botón de Trámites: gira cuando el submenú está abierto */
+.menu-boton::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-0.15rem);
+  transition: transform 0.2s;
+}
+.menu-boton[aria-expanded="true"]::after { transform: rotate(225deg) translateY(-0.1rem); }
+
+/* E14 corregido: la página actual se marca en el menú con algo más que el color (borde inferior y negrita) */
+.menu-lista a[aria-current="page"],
+.menu-boton.es-actual {
+  font-weight: bold;
+  box-shadow: inset 0 -4px 0 var(--color-foco);
+}
+
+/* Submenú: sin JavaScript se muestra como lista anidada; con menu.js se vuelve desplegable */
+.submenu { list-style: none; padding: 0 0 0 1rem; }
+.menu-js .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  width: 16rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0;
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: 0 0 var(--radio) var(--radio);
+  box-shadow: 0 0.375rem 0.875rem rgba(0, 0, 0, 0.2);
+}
+.menu-js .submenu[hidden] { display: none; }
+.menu-js .submenu a { color: var(--color-primario); border-bottom: 1px solid var(--color-borde-suave); }
+.menu-js .submenu li:last-child a { border-bottom: 0; }
+.menu-js .submenu a:hover { background: var(--color-primario-claro); }
+.menu-js .submenu a[aria-current="page"] { box-shadow: inset 4px 0 0 var(--color-primario); }
+
+@media (min-width: 48rem) {
+  .menu-lista { display: flex; flex-wrap: wrap; padding: 0; }
+  .menu-lista a,
+  .menu-boton { padding: 0.75rem 1.125rem; }
+}
+
+/* ---------- Migas de pan ---------- */
+.migas { padding: 1rem 0 0; font-size: 0.9375rem; }
+.migas ol { list-style: none; padding: 0; display: flex; flex-wrap: wrap; align-items: center; }
+.migas li { display: flex; align-items: center; }
+.migas li + li::before {
+  content: "›";
+  padding: 0 0.5rem;
+  color: var(--color-texto-suave);
+}
+.migas a { display: inline-flex; align-items: center; min-height: var(--area-clic); }
+.migas [aria-current="page"] { font-weight: bold; }
+
+/* ---------- Contenido principal ---------- */
+.contenido { padding-top: 1.5rem; padding-bottom: 3rem; }
+.intro { font-size: 1.0625rem; margin-bottom: 1.5rem; max-width: 48rem; }
+.seccion { margin-top: 2.5rem; }
+.seccion > h2 {
+  padding-bottom: 0.375rem;
+  border-bottom: 3px solid var(--color-secundario);
+  margin-bottom: 1rem;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--area-clic);
+  padding: 0.625rem 1.375rem;
+  background: var(--color-primario);
+  color: var(--color-sobre-oscuro);
+  border: 2px solid var(--color-primario);
+  border-radius: var(--radio);
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+.boton:hover { background: var(--color-primario-oscuro); border-color: var(--color-primario-oscuro); color: var(--color-sobre-oscuro); text-decoration: underline; }
+.boton-secundario { background: var(--color-fondo); color: var(--color-primario); }
+.boton-secundario:hover { background: var(--color-primario-claro); color: var(--color-primario-oscuro); }
+
+/* ---------- Tarjetas ---------- */
+.rejilla { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 40rem) {
+  .rejilla-2,
+  .rejilla-3,
+  .rejilla-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 64rem) {
+  .rejilla-3 { grid-template-columns: repeat(3, 1fr); }
+  .rejilla-4 { grid-template-columns: repeat(4, 1fr); }
+}
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+.tarjeta img { width: 100%; }
+.tarjeta-cuerpo { padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.tarjeta-cuerpo h2,
+.tarjeta-cuerpo h3 { margin-bottom: 0; }
+.tarjeta-meta { font-size: 0.875rem; color: var(--color-texto-suave); }
+
+/* ---------- Tabla ---------- */
+.tabla-contenedor { width: 100%; overflow-x: auto; }
+.tabla { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+.tabla caption { text-align: left; font-weight: bold; color: var(--color-primario); padding-bottom: 0.75rem; font-size: 1.0625rem; }
+.tabla th,
+.tabla td { padding: 0.75rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-borde-suave); }
+.tabla thead th { background: var(--color-primario); color: var(--color-sobre-oscuro); }
+.tabla tbody tr:nth-child(even) { background: var(--color-fondo-suave); }
+
+/* ---------- Acordeón ---------- */
+.acordeon-item { border: 1px solid var(--color-borde); border-radius: var(--radio); margin-bottom: 0.5rem; }
+.acordeon-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: var(--area-clic);
+  padding: 0.75rem 1rem;
+  background: var(--color-fondo-suave);
+  color: var(--color-primario);
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+.acordeon-item summary::-webkit-details-marker { display: none; }
+.acordeon-item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.acordeon-item[open] summary::after { content: "−"; }
+.acordeon-item summary:hover { background: var(--color-primario-claro); }
+.acordeon-respuesta { padding: 0.75rem 1rem 1rem; }
+
+/* ---------- Pie de página ---------- */
+/* E04 corregido: pie con texto de tamaño normal y contraste suficiente */
+.pie {
+  margin-top: 2rem;
+  background: var(--color-primario-oscuro);
+  color: var(--color-sobre-oscuro);
+  font-size: 0.9375rem;
+  padding: 2rem 0 1rem;
+}
+.pie h2 { color: var(--color-sobre-oscuro); font-size: 1.0625rem; margin-bottom: 0.5rem; }
+.pie a { color: var(--color-sobre-oscuro); }
+.pie a:hover { color: #E8F0F8; }
+.pie address { font-style: normal; }
+.pie-columnas { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.pie-enlaces { list-style: none; padding: 0; }
+.pie-enlaces a { display: inline-flex; align-items: center; min-height: var(--area-clic); }
+.pie-aviso {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #4F6D8A;
+  text-align: center;
+  font-size: 0.875rem;
+}
+@media (min-width: 48rem) {
+  .pie-columnas { grid-template-columns: repeat(3, 1fr); }
+}
