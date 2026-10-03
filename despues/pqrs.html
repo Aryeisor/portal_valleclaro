@@ -8,6 +8,7 @@
   <title>PQRS – Alcaldía de Valleclaro</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/formularios.css">
 </head>
 <body>
 
@@ -73,9 +74,198 @@
 
       <!-- E02 corregido: un solo h1 por página -->
       <h1>Peticiones, quejas, reclamos, sugerencias y denuncias (PQRS)</h1>
-      <p class="intro">Diligencia el siguiente formulario para radicar tu solicitud ante la Alcaldía de Valleclaro.</p>
+      <p class="intro" id="intro-pqrs">Diligencia el siguiente formulario para radicar tu solicitud ante la Alcaldía de Valleclaro.</p>
 
-      <!-- Contenido pendiente: se completa en la fase 4 -->
+      <!-- E18 corregido: aviso de la sesión de 2 minutos antes de empezar -->
+      <p class="nota-sesion" id="nota-sesion">Tienes 2 minutos para diligenciar el formulario. Un minuto antes de que termine el tiempo te avisaremos y podrás pedir más tiempo.</p>
+
+      <!-- Mensaje que aparece si la sesión llega a expirar -->
+      <div class="aviso-expirado" id="aviso-expirado" tabindex="-1" hidden>
+        <p>La sesión expiró y por seguridad se borraron los datos del formulario. Puedes volver a diligenciarlo cuando quieras.</p>
+      </div>
+
+      <!-- E17 corregido: resumen de errores con enlaces a cada campo; recibe el foco al enviar -->
+      <div class="resumen-errores" id="resumen-errores" tabindex="-1" aria-labelledby="titulo-resumen" hidden>
+        <h2 id="titulo-resumen">Revisa los campos marcados antes de enviar</h2>
+        <ul id="lista-errores"></ul>
+      </div>
+
+      <!-- E16 corregido: nota inicial que explica cómo se marcan los campos obligatorios -->
+      <p class="nota-obligatorios" id="nota-obligatorios">Los campos con * son obligatorios.</p>
+
+      <!-- E17 corregido: validación propia (novalidate); los datos escritos se conservan si hay errores -->
+      <form id="form-pqrs" class="formulario" novalidate>
+
+        <!-- E15 corregido: los campos se agrupan con fieldset y legend -->
+        <fieldset class="grupo">
+          <legend>Datos del solicitante</legend>
+
+          <div class="campo campo-casilla">
+            <input type="checkbox" id="anonimo" name="anonimo" aria-describedby="ayuda-anonimo">
+            <!-- E15 corregido: label visible asociado al campo -->
+            <label for="anonimo">Enviar de forma anónima</label>
+            <p class="ayuda" id="ayuda-anonimo">Si lo marcas, no te pediremos datos personales y la respuesta se publicará en la cartelera de la alcaldía.</p>
+          </div>
+
+          <div id="datos-personales">
+            <!-- E15 corregido: grupo de opciones con fieldset y legend -->
+            <fieldset class="campo grupo-opciones" id="grupo-tipo-persona">
+              <!-- E16 corregido: obligatorio con asterisco y texto "(obligatorio)", no solo color -->
+              <legend>Tipo de persona <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></legend>
+              <p class="mensaje-error-campo" id="error-tipo-persona" hidden></p>
+              <div class="opcion">
+                <input type="radio" id="tipo-persona-natural" name="tipo_persona" value="Natural">
+                <label for="tipo-persona-natural">Natural</label>
+              </div>
+              <div class="opcion">
+                <input type="radio" id="tipo-persona-juridica" name="tipo_persona" value="Jurídica">
+                <label for="tipo-persona-juridica">Jurídica</label>
+              </div>
+            </fieldset>
+
+            <div class="campo">
+              <!-- E15 corregido: label visible asociado al campo -->
+              <!-- E16 corregido: obligatorio con asterisco y texto "(obligatorio)" -->
+              <label for="tipo-documento">Tipo de documento <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></label>
+              <p class="mensaje-error-campo" id="error-tipo-documento" hidden></p>
+              <select id="tipo-documento" name="tipo_documento">
+                <option value="">Elige una opción</option>
+                <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
+                <option value="Cédula de extranjería">Cédula de extranjería</option>
+                <option value="NIT">NIT</option>
+                <option value="Pasaporte">Pasaporte</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <!-- E15 corregido: label visible y ayuda asociada con aria-describedby -->
+              <label for="numero-documento">Número de documento <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></label>
+              <p class="ayuda" id="ayuda-numero-documento">Sin puntos, espacios ni guiones. Ej.: 1098765432</p>
+              <p class="mensaje-error-campo" id="error-numero-documento" hidden></p>
+              <input type="text" id="numero-documento" name="numero_documento" autocomplete="off" aria-describedby="ayuda-numero-documento">
+            </div>
+
+            <div class="campo-doble">
+              <div class="campo">
+                <!-- E15 corregido: label visible asociado al campo -->
+                <label for="nombres">Nombres <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></label>
+                <p class="mensaje-error-campo" id="error-nombres" hidden></p>
+                <input type="text" id="nombres" name="nombres" autocomplete="given-name">
+              </div>
+              <div class="campo">
+                <!-- E15 corregido: label visible asociado al campo -->
+                <label for="apellidos">Apellidos <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></label>
+                <p class="mensaje-error-campo" id="error-apellidos" hidden></p>
+                <input type="text" id="apellidos" name="apellidos" autocomplete="family-name">
+              </div>
+            </div>
+
+            <div class="campo-doble">
+              <div class="campo">
+                <!-- E15 corregido: label visible y ejemplo de formato (Nielsen 5) -->
+                <label for="correo">Correo electrónico <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></label>
+                <p class="ayuda" id="ayuda-correo">Ej.: nombre@correo.com</p>
+                <p class="mensaje-error-campo" id="error-correo" hidden></p>
+                <input type="email" id="correo" name="correo" autocomplete="email" aria-describedby="ayuda-correo">
+              </div>
+              <div class="campo">
+                <!-- E15 corregido: label visible; el campo opcional lo dice en el label -->
+                <label for="telefono">Teléfono (opcional)</label>
+                <p class="ayuda" id="ayuda-telefono">Entre 7 y 10 números. Ej.: 3001234567</p>
+                <p class="mensaje-error-campo" id="error-telefono" hidden></p>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel" aria-describedby="ayuda-telefono">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- E15 corregido: los campos se agrupan con fieldset y legend -->
+        <fieldset class="grupo">
+          <legend>Solicitud</legend>
+
+          <div class="campo">
+            <!-- E15 corregido: label visible asociado al campo -->
+            <label for="tipo-solicitud">Tipo de solicitud <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></label>
+            <p class="mensaje-error-campo" id="error-tipo-solicitud" hidden></p>
+            <select id="tipo-solicitud" name="tipo_solicitud">
+              <option value="">Elige una opción</option>
+              <option value="Petición">Petición</option>
+              <option value="Queja">Queja</option>
+              <option value="Reclamo">Reclamo</option>
+              <option value="Sugerencia">Sugerencia</option>
+              <option value="Denuncia">Denuncia</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <!-- E15 corregido: label visible y ayuda asociada -->
+            <label for="asunto">Asunto <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></label>
+            <p class="ayuda" id="ayuda-asunto">Resume tu solicitud en una frase. Ej.: Lámpara de alumbrado dañada en la Calle 7</p>
+            <p class="mensaje-error-campo" id="error-asunto" hidden></p>
+            <input type="text" id="asunto" name="asunto" maxlength="150" aria-describedby="ayuda-asunto">
+          </div>
+
+          <div class="campo">
+            <!-- E15 corregido: label visible; ayuda y contador asociados con aria-describedby -->
+            <label for="descripcion">Descripción <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></label>
+            <p class="ayuda" id="ayuda-descripcion">Cuenta qué pasó, dónde y desde cuándo. Máximo 1.000 caracteres.</p>
+            <p class="mensaje-error-campo" id="error-descripcion" hidden></p>
+            <textarea id="descripcion" name="descripcion" rows="7" maxlength="1000" aria-describedby="ayuda-descripcion contador"></textarea>
+            <!-- Nielsen 1: contador visible; los avisos al lector de pantalla van en una región aparte y solo en ciertos puntos -->
+            <p class="contador" id="contador">0 de 1.000 caracteres</p>
+            <p class="visualmente-oculto" id="anuncio-contador" aria-live="polite"></p>
+          </div>
+
+          <div class="campo">
+            <!-- E15 corregido: label visible; límites del archivo informados antes de subir (Nielsen 5) -->
+            <label for="adjunto">Archivo adjunto (opcional)</label>
+            <p class="ayuda" id="ayuda-adjunto">Solo PDF o JPG, máximo 5 MB.</p>
+            <p class="mensaje-error-campo" id="error-adjunto" hidden></p>
+            <input type="file" id="adjunto" name="adjunto" accept=".pdf,.jpg,.jpeg,application/pdf,image/jpeg" aria-describedby="ayuda-adjunto">
+            <button type="button" class="boton boton-secundario boton-pequeno" id="quitar-adjunto" hidden>Quitar archivo</button>
+          </div>
+        </fieldset>
+
+        <!-- E15 corregido: los campos se agrupan con fieldset y legend -->
+        <fieldset class="grupo">
+          <legend>Respuesta y autorización</legend>
+
+          <fieldset class="campo grupo-opciones" id="grupo-medio-respuesta">
+            <legend>Medio de respuesta <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></legend>
+            <p class="mensaje-error-campo" id="error-medio-respuesta" hidden></p>
+            <div class="opcion">
+              <input type="radio" id="medio-correo" name="medio_respuesta" value="Correo electrónico">
+              <label for="medio-correo">Correo electrónico</label>
+            </div>
+            <div class="opcion">
+              <input type="radio" id="medio-direccion" name="medio_respuesta" value="Dirección física">
+              <label for="medio-direccion">Dirección física</label>
+            </div>
+          </fieldset>
+          <p class="ayuda nota-anonimo" id="nota-medio-anonimo" hidden>Como la solicitud es anónima, la respuesta se publicará en la cartelera de la alcaldía.</p>
+
+          <div class="campo campo-casilla">
+            <input type="checkbox" id="autorizacion" name="autorizacion">
+            <!-- E15 corregido: label visible asociado a la casilla -->
+            <!-- E16 corregido: obligatorio con asterisco y texto "(obligatorio)" -->
+            <label for="autorizacion">Autorizo el tratamiento de mis datos personales de acuerdo con la Ley 1581 de 2012. <span class="obligatorio"><span aria-hidden="true">*</span> (obligatorio)</span></label>
+            <p class="mensaje-error-campo" id="error-autorizacion" hidden></p>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="boton">Enviar solicitud</button>
+      </form>
+
+      <!-- E19 corregido: confirmación anunciada con role="status"; pqrs.js la llena al enviar -->
+      <div class="confirmacion" id="confirmacion" role="status"></div>
+
+      <!-- E18 corregido: aviso accesible antes de que expire la sesión, con opción de pedir más tiempo -->
+      <dialog class="aviso-sesion" id="aviso-sesion" role="alertdialog" aria-labelledby="titulo-aviso-sesion" aria-describedby="texto-aviso-sesion">
+        <h2 id="titulo-aviso-sesion">Tu sesión está por terminar</h2>
+        <p id="texto-aviso-sesion">Por seguridad, el formulario se borrará en 1 minuto. Si necesitas más tiempo para terminar, pulsa el botón.</p>
+        <p class="cuenta-regresiva" aria-hidden="true">Tiempo restante: <span id="cuenta-regresiva">60</span> segundos</p>
+        <button type="button" class="boton" id="mas-tiempo">Necesito más tiempo</button>
+      </dialog>
 
     </div>
   </main>
@@ -112,5 +302,6 @@
   </footer>
 
   <script src="js/menu.js"></script>
+  <script src="js/pqrs.js"></script>
 </body>
 </html>
