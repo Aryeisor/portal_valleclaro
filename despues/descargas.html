@@ -75,7 +75,67 @@
       <h1>Descargas</h1>
       <p class="intro">Formatos, guías e informes de la Alcaldía de Valleclaro.</p>
 
-      <!-- Contenido pendiente: se completa en la fase 5 -->
+      <p>Todos los documentos están en PDF con texto real, que se puede leer con lector de pantalla, buscar y copiar.</p>
+
+      <!-- La tabla se desplaza dentro de su propio recuadro en pantallas angostas; tabindex permite desplazarla con el teclado -->
+      <div class="tabla-contenedor" role="region" aria-labelledby="titulo-tabla-descargas" tabindex="0">
+        <!-- E22 corregido: tabla real con caption y encabezados th con scope -->
+        <table class="tabla tabla-descargas">
+          <caption id="titulo-tabla-descargas"><span class="caption-fijo">Documentos disponibles para descargar</span></caption>
+          <thead>
+            <tr>
+              <th scope="col">Documento</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Formato y tamaño</th>
+              <th scope="col">Descarga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Formato de solicitud de certificado de residencia</th>
+              <td>Trámites</td>
+              <td>PDF, 60 KB, 2 páginas</td>
+              <!-- E21 corregido: enlace descriptivo con formato, tamaño y páginas -->
+              <td><a href="docs/formato-certificado-residencia.pdf">Descargar formato de solicitud de certificado de residencia (PDF, 60 KB, 2 páginas)</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Formato de PQRS para radicación presencial</th>
+              <td>Atención al ciudadano</td>
+              <td>PDF, 60 KB, 2 páginas</td>
+              <!-- E21 corregido: enlace descriptivo con formato, tamaño y páginas -->
+              <td><a href="docs/formato-pqrs-presencial.pdf">Descargar formato de PQRS (PDF, 60 KB, 2 páginas)</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Formato de permiso de espacio público</th>
+              <td>Trámites</td>
+              <td>PDF, 61 KB, 2 páginas</td>
+              <!-- E21 corregido: enlace descriptivo con formato, tamaño y páginas -->
+              <td><a href="docs/formato-permiso-espacio-publico.pdf">Descargar formato de permiso de espacio público (PDF, 61 KB, 2 páginas)</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Guía de trámites 2026</th>
+              <td>Guías</td>
+              <td>PDF, 69 KB, 2 páginas</td>
+              <!-- E21 corregido: enlace descriptivo con formato, tamaño y páginas -->
+              <td><a href="docs/guia-tramites-2026.pdf">Descargar guía de trámites 2026 (PDF, 69 KB, 2 páginas)</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Resumen del Plan de Desarrollo 2024–2027</th>
+              <td>Planeación</td>
+              <td>PDF, 53 KB, 1 página</td>
+              <!-- E21 corregido: enlace descriptivo con formato, tamaño y páginas -->
+              <td><a href="docs/resumen-plan-desarrollo-2024-2027.pdf">Descargar resumen del Plan de Desarrollo 2024–2027 (PDF, 53 KB, 1 página)</a></td>
+            </tr>
+            <tr>
+              <th scope="row">Informe de gestión primer semestre 2026</th>
+              <td>Transparencia</td>
+              <td>PDF, 59 KB, 1 página</td>
+              <!-- E21 corregido: enlace descriptivo con formato, tamaño y páginas -->
+              <td><a href="docs/informe-gestion-primer-semestre-2026.pdf">Descargar informe de gestión primer semestre 2026 (PDF, 59 KB, 1 página)</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
     </div>
   </main>

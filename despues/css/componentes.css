@@ -396,3 +396,22 @@
 .datos-destacados { font-size: 1.125rem; margin-bottom: 0.75rem; }
 .datos-destacados dd { font-weight: bold; color: var(--color-secundario); }
 .enlace-descarga { display: inline-flex; align-items: center; min-height: var(--area-clic); font-weight: bold; }
+
+/* ---------- Preguntas frecuentes ---------- */
+.indice ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+.indice a { display: inline-flex; align-items: center; min-height: var(--area-clic); font-weight: bold; }
+/* Deja aire arriba al llegar por un ancla (#pago-predial, #preguntas-tramites) */
+.seccion > h2,
+.acordeon-item { scroll-margin-top: 1rem; }
+/* La pregunta a la que se llega por un enlace se resalta con borde y no solo con color */
+.acordeon-item:target { border: 3px solid var(--color-foco); box-shadow: 0 0 0 2px var(--color-foco-sombra); }
+
+/* ---------- Descargas ---------- */
+/* E22 corregido: tabla real; en pantallas angostas se desplaza dentro de su recuadro, no la página */
+.tabla-descargas { min-width: 44rem; }
+.tabla-descargas tbody th { font-weight: bold; }
+.tabla-descargas td a { display: inline-flex; align-items: center; min-height: var(--area-clic); }
+.tabla-contenedor:focus-visible { outline-offset: 2px; }
+/* El título de la tabla no se desplaza con ella en pantallas angostas */
+.caption-fijo { position: sticky; left: 0; display: inline-block; max-width: calc(100vw - 2rem); }
+.tabla-contenedor { margin-top: 1rem; }
