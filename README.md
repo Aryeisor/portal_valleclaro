@@ -89,8 +89,11 @@ La ficha completa de cada error (problema, criterio, código antes, código desp
 Además de corregir los 22 errores, `despues/` incluye:
 
 - **Declaración de accesibilidad** (`accesibilidad.html`), enlazada desde el pie de página.
-- **Preferencias de lectura**: tamaño de texto y alto contraste (`js/preferencias.js`).
+- **Preferencias de lectura persistentes** (localStorage) en las 8 páginas: tamaño de texto y alto contraste, operables solo con teclado y que respetan `prefers-contrast: more` (`js/preferencias.js`).
 - **Filtro de trámites** para buscar por nombre (`js/tramites.js`).
+- **Sesión del formulario PQRS ampliada a 20 minutos** (antes 2), con aviso accesible 60 s antes, renovación automática sin perder lo escrito y un modo `?demo=1` con tiempos cortos para probar (`js/pqrs.js`).
+- **Objetivos de clic de 44×44 px mínimo** en botones, enlaces del menú, migas y controles de preferencias (variable `--area-clic` en `css/base.css`).
+- **Video tutorial accesible** "Cómo radicar una PQRS" (`media/tutorial-pqrs.mp4`), sin autoplay, con subtítulos incrustados, pista VTT descargable y transcripción completa en `<details>` (`js/video-tutorial.js`).
 - **PDF accesibles**, con texto real en lugar de imágenes escaneadas.
 - **Paleta verificada** contra fondo blanco: azul institucional `#1F4E79` (8.7:1), texto `#1A1A1A` (17:1), rojo de error `#B00020` (7.3:1) y foco amarillo `#F9A825` con sombra oscura.
 - **CSS organizado** en tres archivos (`base.css`, `componentes.css`, `formularios.css`), mobile-first y en unidades `rem` para que el zoom funcione.
@@ -120,7 +123,7 @@ Las dos versiones se evalúan con las mismas herramientas, tareas y personas par
 
 Por tarea se mide éxito, tiempo y número de errores; al final de cada versión se aplica el cuestionario **SUS** (System Usability Scale). Además se hace una **evaluación heurística** con las 10 heurísticas de Nielsen y gravedad de 0 a 4.
 
-La evidencia se guarda en `documentacion/` (capturas, reportes, pruebas con usuarios y videos).
+El diseño de la prueba con usuarios (persona, escenario, mapa de empatía, consentimiento y guion de tareas) está en `documentacion/usuarios/`. La evidencia recolectada se guarda en `capturas/` (antes y después) y en `documentacion/reportes/` y `documentacion/videos/`.
 
 ## Marco normativo
 
@@ -161,27 +164,32 @@ portal_valleclaro/
 │   ├── pqrs.html
 │   ├── faq.html
 │   ├── descargas.html
-│   ├── accesibilidad.html      ← declaración de accesibilidad (nueva)
+│   ├── accesibilidad.html      ← declaración de accesibilidad
 │   ├── css/
-│   │   ├── base.css            ← variables de color, tipografía, foco
+│   │   ├── base.css            ← variables de color, tipografía, foco, área de clic
 │   │   ├── componentes.css     ← encabezado, menú, tarjetas, botones, tabla, acordeón
 │   │   └── formularios.css     ← campos, errores, avisos
 │   ├── js/
 │   │   ├── menu.js             ← submenú con teclado y aria-expanded
-│   │   ├── pqrs.js             ← validación, mensajes de error, radicado, aviso de sesión
+│   │   ├── pqrs.js             ← validación, mensajes de error, radicado, sesión de 20 min (demo con ?demo=1)
 │   │   ├── tramites.js         ← filtro de trámites
-│   │   └── preferencias.js     ← tamaño de texto y alto contraste
-│   ├── img/                    ← banner sin texto incrustado
+│   │   ├── preferencias.js     ← tamaño de texto y alto contraste, persistentes
+│   │   └── video-tutorial.js   ← reproductor accesible del tutorial de PQRS
+│   ├── img/                    ← banner sin texto incrustado, póster del video
+│   ├── media/                  ← tutorial-pqrs.mp4 (con subtítulos incrustados) y tutorial-pqrs.es.vtt
 │   └── docs/                   ← PDF con texto real
+├── capturas/
+│   ├── antes/                  ← C8_pqrs_antes.png, C8_tramite_antes.png…
+│   └── despues/                ← A1_*, B5_*, B6_*, C8_* …
 └── documentacion/
-    ├── cambios-antes-despues.md  ← ficha de cada error, E01 a E22
-    ├── capturas/
-    │   ├── antes/              ← E01-antes.png, E15-antes.png…
-    │   └── despues/            ← E01-despues.png, E15-despues.png…
-    ├── reportes/               ← Lighthouse, WAVE y axe de cada versión
-    ├── pruebas-usuarios/       ← guion de tareas, resultados y cuestionarios SUS
-    ├── redaccion/              ← documento escrito del proyecto
-    └── videos/                 ← navegación con teclado y NVDA, antes y después
+    ├── cambios-antes-despues.md         ← ficha de cada error, E01 a E22
+    ├── calculo-contraste.md             ← cálculo de contraste de cada color de despues/
+    ├── deteccion-herramienta-vs-manual.md ← qué detecta cada herramienta automática vs. revisión manual
+    ├── redaccion/                       ← documento escrito del proyecto, por tema (A1, B6, B7, B8, C8, E5…)
+    ├── usuarios/                        ← persona, escenario, mapa de empatía, consentimiento, plan de prueba
+    ├── reportes/                        ← Lighthouse, WAVE y axe de cada versión
+    ├── pruebas-usuarios/                ← guion de tareas, resultados y cuestionarios SUS
+    └── videos/                          ← navegación con teclado y NVDA, antes y después
 ```
 
 ## Convenciones
