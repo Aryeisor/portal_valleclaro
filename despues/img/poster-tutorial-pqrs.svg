@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Imagen de previsualización del video tutorial de PQRS">
+  <rect width="640" height="360" fill="#1b3a5c"/>
+  <rect x="24" y="24" width="592" height="312" rx="8" fill="#ffffff"/>
+  <rect x="24" y="24" width="592" height="56" rx="8" fill="#1b3a5c"/>
+  <text x="320" y="58" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Cómo radicar una PQRS</text>
+  <circle cx="320" cy="210" r="46" fill="#1b3a5c"/>
+  <polygon points="305,188 305,232 342,210" fill="#ffffff"/>
+  <text x="320" y="300" text-anchor="middle" fill="#1b3a5c" font-family="Arial, sans-serif" font-size="16">Video tutorial · Alcaldía de Valleclaro</text>
+</svg>

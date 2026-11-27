@@ -85,6 +85,40 @@
       <h1>Peticiones, quejas, reclamos, sugerencias y denuncias (PQRS)</h1>
       <p class="intro" id="intro-pqrs">Diligencia el siguiente formulario para radicar tu solicitud ante la Alcaldía de Valleclaro.</p>
 
+      <!-- B6: guía en video del proceso de radicación, con subtítulos, transcripción y aviso si el archivo todavía no existe -->
+      <section class="video-tutorial" aria-labelledby="titulo-video-tutorial">
+        <h2 id="titulo-video-tutorial">Guía en video: cómo radicar una PQRS</h2>
+        <p id="descripcion-video-tutorial">Video de 1 a 2 minutos con narración y subtítulos en español incorporados en la imagen. Incluye transcripción completa.</p>
+        <div class="video-contenedor">
+          <video id="video-tutorial-pqrs" controls preload="metadata" poster="img/poster-tutorial-pqrs.svg" aria-describedby="descripcion-video-tutorial" width="1264" height="704">
+            <source src="media/tutorial-pqrs.mp4" type="video/mp4">
+            Tu navegador no admite la reproducción de video. Puedes leer la <a href="#transcripcion-video-tutorial">transcripción</a> más abajo.
+          </video>
+          <p class="video-aviso" id="video-aviso" hidden>Video próximamente disponible; mientras tanto, lea la transcripción.</p>
+        </div>
+        <details class="acordeon-item">
+          <summary>Ver transcripción</summary>
+          <div id="transcripcion-video-tutorial" class="acordeon-respuesta">
+            <ol class="transcripcion-lista">
+              <li><strong>0:00–0:07</strong> Se abre la página de inicio y se hace clic en el enlace "PQRS" del menú principal. <em>"Para radicar una petición, queja, reclamo o sugerencia, entra a la sección PQRS desde el menú principal."</em></li>
+              <li><strong>0:07–0:14</strong> La página de PQRS carga y la cámara recorre el formulario. <em>"Aquí verás el formulario de PQRS. Los campos marcados con asterisco son obligatorios."</em></li>
+              <li><strong>0:14–0:22</strong> Se elige "Natural" como tipo de persona y se completa el tipo y número de documento. <em>"Primero indica si eres persona natural o jurídica, y luego tu tipo y número de documento."</em></li>
+              <li><strong>0:22–0:29</strong> Se escriben nombres, apellidos, correo electrónico y teléfono. <em>"Completa tus nombres y apellidos, y al menos un correo electrónico para que podamos contactarte."</em></li>
+              <li><strong>0:29–0:38</strong> Se elige el tipo de solicitud y se escribe el asunto. <em>"Elige el tipo de solicitud: petición, queja, reclamo, sugerencia o denuncia, y resume el asunto en una frase."</em></li>
+              <li><strong>0:38–0:46</strong> Se escribe la descripción y se muestra el contador de caracteres. <em>"En la descripción, cuenta qué pasó, dónde y desde cuándo. Puedes ver cuántos caracteres te quedan disponibles."</em></li>
+              <li><strong>0:46–0:53</strong> Se adjunta un archivo PDF de ejemplo. <em>"Si tienes un documento de soporte, puedes adjuntarlo en PDF o JPG, hasta 5 megabytes."</em></li>
+              <li><strong>0:53–0:59</strong> Se elige el medio de respuesta "Correo electrónico". <em>"Elige cómo quieres recibir la respuesta: por correo electrónico o en una dirección física."</em></li>
+              <li><strong>0:59–1:06</strong> Se marca la autorización de tratamiento de datos. <em>"Antes de enviar, marca la autorización para el tratamiento de tus datos personales, de acuerdo con la ley."</em></li>
+              <li><strong>1:06–1:15</strong> Se hace clic en "Enviar solicitud" y aparece la confirmación. <em>"Al enviar, verás un mensaje de confirmación. Guarda ese número de radicado para hacerle seguimiento a tu solicitud."</em></li>
+            </ol>
+            <p>
+              <a href="media/tutorial-pqrs.es.vtt" download>Descargar la transcripción (.vtt)</a> ·
+              <a href="media/tutorial-pqrs.es.vtt" download>Descargar subtítulos (.vtt)</a>
+            </p>
+          </div>
+        </details>
+      </section>
+
       <!-- B7 corregido (2.2.1): sesión de 20 minutos; con ?demo=1 en la URL se prueba con tiempos cortos -->
       <p class="nota-sesion" id="nota-sesion">Tienes 20 minutos para diligenciar el formulario. Un minuto antes de que termine el tiempo te avisaremos y podrás pedir más tiempo sin perder lo que escribiste.</p>
 
@@ -311,6 +345,7 @@
   </footer>
 
   <script src="js/menu.js"></script>
+  <script src="js/video-tutorial.js"></script>
   <script src="js/pqrs.js"></script>
 </body>
 </html>

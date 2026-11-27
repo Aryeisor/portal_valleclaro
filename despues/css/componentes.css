@@ -476,3 +476,13 @@
 .boton-pref:hover { background: var(--color-primario-claro); }
 /* El estado activado se ve por el fondo invertido y también lo anuncia aria-pressed */
 .boton-pref[aria-pressed="true"] { background: var(--color-primario); color: var(--color-sobre-oscuro); }
+
+/* ---------- B6: guía en video ---------- */
+.video-tutorial { margin: 1.5rem 0; padding: 1.125rem; background: var(--color-fondo-suave); border: 1px solid var(--color-borde-suave); border-radius: var(--radio); }
+.video-tutorial h2 { color: var(--color-primario); margin-bottom: 0.5rem; }
+.video-contenedor { margin-top: 0.75rem; }
+.video-contenedor video { display: block; max-width: 100%; width: 100%; height: auto; aspect-ratio: 1264 / 704; border-radius: var(--radio); background: #000; }
+.video-aviso { padding: 0.75rem; background: var(--color-fondo); border: 2px solid var(--color-primario); border-radius: var(--radio); color: var(--color-primario); font-weight: bold; }
+.video-tutorial .acordeon-item { margin-top: 1rem; background: var(--color-fondo); }
+.transcripcion-lista { padding-left: 1.25rem; }
+.transcripcion-lista li { margin-bottom: 0.75rem; }
