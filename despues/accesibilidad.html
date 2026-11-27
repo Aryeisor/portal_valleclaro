@@ -86,39 +86,44 @@
       <!-- Mejora: declaración de accesibilidad según la sección 5.8 del plan (no existe en la versión antes) -->
       <div class="detalle-tramite">
 
-        <section class="seccion" aria-labelledby="nivel">
-          <h2 id="nivel">Nivel de conformidad</h2>
-          <p>Este portal busca cumplir las <strong>Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1, nivel AA</strong>, el mismo nivel que la Resolución 1519 de 2020 del Ministerio TIC toma como referencia para las entidades públicas en Colombia.</p>
-          <p><strong>Estado:</strong> parcialmente conforme. La mayoría de los criterios se cumplen; las excepciones conocidas están en la sección «Limitaciones conocidas».</p>
+        <section class="seccion" aria-labelledby="compromiso">
+          <h2 id="compromiso">Compromiso y alcance</h2>
+          <p>Este portal es un <strong>sitio académico ficticio</strong>, desarrollado para un proyecto universitario de accesibilidad y usabilidad. No pertenece a ninguna alcaldía real. Esta declaración cubre las 8 páginas de esta versión (<code>despues/</code>): Inicio, Noticias, Trámites, el trámite de certificado de residencia, PQRS, Preguntas frecuentes, Descargas y esta misma página.</p>
         </section>
 
-        <section class="seccion" aria-labelledby="que-se-probo">
-          <h2 id="que-se-probo">Qué se probó</h2>
+        <section class="seccion" aria-labelledby="nivel">
+          <h2 id="nivel">Estado de conformidad</h2>
+          <p>Este portal busca cumplir las <strong>Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1, nivel AA</strong>, el mismo nivel que la Resolución 1519 de 2020 del Ministerio TIC toma como referencia para las entidades públicas en Colombia.</p>
+          <p><strong>Estado:</strong> cumple en las páginas y los criterios que se revisaron (ver «Cómo se evaluó»). No se afirma conformidad total ni se ha verificado cada criterio de WCAG 2.1 AA; las excepciones conocidas y lo que falta por revisar están en «Limitaciones conocidas».</p>
+        </section>
+
+        <section class="seccion" aria-labelledby="como-se-evaluo">
+          <h2 id="como-se-evaluo">Cómo se evaluó</h2>
           <ul class="lista">
-            <li><strong>Herramientas automáticas:</strong> Lighthouse, WAVE y axe DevTools en las 8 páginas.</li>
-            <li><strong>Contraste de color:</strong> cada combinación de texto y fondo, con un mínimo de 4.5:1 para texto y 3:1 para bordes de campos y botones.</li>
-            <li><strong>Código:</strong> validador HTML del W3C.</li>
-            <li><strong>Solo teclado:</strong> que todo se alcance con Tab, que el foco siempre se vea y que el menú, el acordeón y el formulario funcionen con Enter, Espacio y Escape.</li>
-            <li><strong>Lector de pantalla:</strong> NVDA, con énfasis en el formulario PQRS.</li>
-            <li><strong>Ampliación y celular:</strong> zoom al 200 % y pantallas desde 320 píxeles de ancho, sin desplazamiento horizontal de la página.</li>
-            <li><strong>Prueba con usuarios:</strong> de 3 a 5 personas realizaron tareas como encontrar el costo de un trámite y radicar una queja.</li>
+            <li><strong>Herramientas automáticas:</strong> revisión con Lighthouse y WAVE.</li>
+            <li><strong>Contraste de color:</strong> cálculo manual de cada combinación de texto y fondo con la fórmula de WCAG 2.1, con un mínimo de 4.5:1 para texto y 3:1 para bordes de campos y botones (ver <a href="../documentacion/calculo-contraste.md">documentacion/calculo-contraste.md</a>).</li>
+            <li><strong>Revisión manual con teclado:</strong> que todo se alcance con Tab, que el foco siempre se vea y que el menú, el acordeón y el formulario funcionen con Enter, Espacio y Escape.</li>
+            <li><strong>Revisión manual del código:</strong> estructura semántica (encabezados, regiones, etiquetas de formulario) y lectura del contenido de cada página.</li>
           </ul>
         </section>
 
         <section class="seccion" aria-labelledby="limitaciones">
           <h2 id="limitaciones">Limitaciones conocidas</h2>
           <ul class="lista">
+            <li>No se ha hecho prueba con lectores de pantalla (NVDA, JAWS, VoiceOver, TalkBack). Es un procedimiento de verificación propuesto, pero no se ha ejecutado ni hay evidencia registrada.</li>
+            <li>No se ha hecho prueba con personas usuarias. El plan de prueba existe en <a href="../documentacion/usuarios/plan-prueba.md">documentacion/usuarios/plan-prueba.md</a>, pero no se ha realizado.</li>
+            <li>No se ha verificado zoom al 200 % ni pantallas desde 320 píxeles de ancho de forma sistemática en las 8 páginas.</li>
+            <li>No se ha ejecutado el validador HTML del W3C sobre las páginas de esta versión.</li>
             <li>La tabla de documentos de la página Descargas se desplaza horizontalmente dentro de su recuadro en pantallas angostas. La página completa no se desplaza.</li>
             <li>El formulario PQRS es una simulación académica: no envía datos y el número de radicado es ficticio.</li>
             <li>La sesión del formulario PQRS dura 2 minutos con fines de demostración. Un minuto antes aparece un aviso para pedir más tiempo.</li>
             <li>Las preferencias de tamaño de texto y alto contraste se guardan solo en este navegador. Si el navegador bloquea el almacenamiento, se pierden al cerrar la página.</li>
-            <li>El sitio se probó con NVDA en Windows. Aún no se ha probado con JAWS, VoiceOver ni TalkBack.</li>
           </ul>
         </section>
 
         <section class="seccion" aria-labelledby="revision">
           <h2 id="revision">Fecha de la última revisión</h2>
-          <p>Esta declaración se revisó el <time datetime="2026-10-03">3 de octubre de 2026</time>.</p>
+          <p>Esta declaración se revisó el <time datetime="2026-11-26">26 de noviembre de 2026</time>.</p>
         </section>
 
         <section class="seccion" aria-labelledby="reportar">
