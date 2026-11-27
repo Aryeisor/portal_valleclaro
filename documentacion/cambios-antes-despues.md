@@ -233,6 +233,7 @@ contenedor.addEventListener('keydown', function (evento) {
 
 - **Cómo verificar:** solo con teclado, llegar a «Trámites», pulsar Enter o Espacio (se abre y `aria-expanded` pasa a `true`), entrar con Tab a los enlaces, salir con Escape (el foco vuelve al botón). Con NVDA se anuncia «Trámites, botón, contraído/expandido».
 - **Evidencia sugerida:** `E06-antes.png` / `E06-despues.png` (submenú abierto con teclado); video `videos/teclado-menu-antes.mp4` / `videos/teclado-menu-despues.mp4`.
+- **Análisis ampliado (usable vs. accesible):** ver [`redaccion/A1_usable_vs_accesible.md`](redaccion/A1_usable_vs_accesible.md).
 
 ### E07 · Todas las pestañas se titulan «Inicio»
 
