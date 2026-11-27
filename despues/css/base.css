@@ -37,6 +37,10 @@ body,
 h1, h2, h3, h4,
 p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 
+/* B5: corrección 1.4.4 / 1.4.10 — con el texto muy agrandado, una sola palabra puede no caber en
+   una tarjeta angosta; que se parta en vez de forzar scroll horizontal de toda la página */
+h1, h2, h3, h4, p, li, dd, dt { overflow-wrap: anywhere; }
+
 img,
 svg { display: block; max-width: 100%; height: auto; }
 
@@ -68,6 +72,10 @@ p + p { margin-top: 0.75rem; }
 /* E04 corregido: enlaces en azul institucional (8.7:1) y subrayados */
 a { color: var(--color-primario); text-decoration: underline; text-underline-offset: 0.15em; }
 a:hover { color: var(--color-primario-oscuro); text-decoration-thickness: 0.15em; }
+
+/* B5: corrección 1.4.10 — un correo o enlace largo se parte en vez de forzar scroll horizontal */
+a[href^="mailto:"],
+a[href^="tel:"] { overflow-wrap: anywhere; }
 
 @media (min-width: 48rem) {
   h1 { font-size: 2rem; }

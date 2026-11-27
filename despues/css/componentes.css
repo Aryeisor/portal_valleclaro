@@ -4,13 +4,36 @@
    acordeón y pie de página. Mobile-first.
    ========================================================== */
 
+/* B5: corrección 1.4.4 / 1.4.10 — los enlaces y botones con área de clic mínima usan inline-flex;
+   sin min-width: 0 el texto que envuelve en varias líneas puede forzar un ancho mayor al disponible */
+.migas a,
+.pie-enlaces a,
+.acceso h3 a,
+.noticia-titulo a,
+.enlace-mas,
+.enlace-tramite,
+.lista a,
+.enlace-descarga,
+.indice a,
+.tabla-descargas td a,
+.menu-lista a,
+.menu-boton {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
 /* ---------- Saltar al contenido ---------- */
 /* E03 corregido: enlace para saltar al contenido, visible al recibir foco con Tab */
+/* B5: corrección 1.4.4 / 1.4.10 — max-width calculado contra el viewport para que el enlace enfocado nunca se salga de la pantalla */
 .saltar {
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
   z-index: 100;
+  max-width: calc(100vw - 1rem);
+  overflow-wrap: anywhere;
   padding: 0.75rem 1rem;
   background: var(--color-fondo);
   color: var(--color-primario);
@@ -47,17 +70,20 @@
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
 }
+/* B5: corrección 1.4.4 / 1.4.10 — flex-wrap y min-width: 0 para que el logo y el nombre se envuelvan en lugar de desbordar */
 .marca {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
   color: var(--color-sobre-oscuro);
   text-decoration: none;
   align-self: flex-start;
+  max-width: 100%;
 }
 .marca:hover { color: var(--color-sobre-oscuro); }
-.marca img { width: 3.5rem; height: auto; }
-.marca-texto { display: flex; flex-direction: column; line-height: 1.1; }
+.marca img { width: 3.5rem; height: auto; flex-shrink: 0; }
+.marca-texto { display: flex; flex-direction: column; line-height: 1.1; min-width: 0; overflow-wrap: anywhere; }
 .marca-pre { font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; }
 .marca-nombre { font-size: 1.75rem; font-weight: bold; }
 .lema { font-style: italic; font-size: 0.9375rem; color: #E8F0F8; }
@@ -72,19 +98,20 @@
 
 /* ---------- Menú principal ---------- */
 .menu { background: var(--color-primario-oscuro); }
+/* B5: corrección 1.4.4 / 1.4.10 — flex-wrap en vez de columnas fijas: la navegación envuelve en varias
+   filas, cada enlace según lo que necesite su propio texto, sin desbordar ni recortar nada */
 .menu-lista {
   list-style: none;
   padding: 0.25rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
 }
-.menu-lista > li { position: relative; }
+.menu-lista > li { position: relative; min-width: 0; }
 .menu-lista a,
 .menu-boton {
   display: flex;
   align-items: center;
   gap: 0.375rem;
-  width: 100%;
   min-height: var(--area-clic);
   padding: 0.5rem 0.75rem;
   color: var(--color-sobre-oscuro);
@@ -141,7 +168,7 @@
 .menu-js .submenu a[aria-current="page"] { box-shadow: inset 4px 0 0 var(--color-primario); }
 
 @media (min-width: 48rem) {
-  .menu-lista { display: flex; flex-wrap: wrap; padding: 0; }
+  .menu-lista { padding: 0; }
   .menu-lista a,
   .menu-boton { padding: 0.75rem 1.125rem; }
 }
@@ -189,16 +216,11 @@
 .boton-secundario:hover { background: var(--color-primario-claro); color: var(--color-primario-oscuro); }
 
 /* ---------- Tarjetas ---------- */
-.rejilla { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-@media (min-width: 40rem) {
-  .rejilla-2,
-  .rejilla-3,
-  .rejilla-4 { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 64rem) {
-  .rejilla-3 { grid-template-columns: repeat(3, 1fr); }
-  .rejilla-4 { grid-template-columns: repeat(4, 1fr); }
-}
+/* B5: corrección 1.4.4 / 1.4.10 — auto-fit con minmax(min(100%, 14rem), 1fr): cada tarjeta encoge
+   antes de desbordar, y debajo de ~600 px el minmax ya da una sola columna; el media query siguiente
+   lo asegura siempre, aunque el texto esté agrandado. */
+.rejilla { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1.25rem; }
+.rejilla > li { min-width: 0; }
 .tarjeta {
   display: flex;
   flex-direction: column;
@@ -261,7 +283,14 @@
 .pie a { color: var(--color-sobre-oscuro); }
 .pie a:hover { color: #E8F0F8; }
 .pie address { font-style: normal; }
-.pie-columnas { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+/* B5: corrección 1.4.4 / 1.4.10 — mismo patrón auto-fit que .rejilla, con hijos que pueden encoger */
+.pie-columnas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1.5rem; }
+.pie-columnas > div { min-width: 0; }
+/* B5: corrección 1.4.10 — por debajo de 600 px, una sola columna en ambas rejillas, sin importar el tamaño del texto */
+@media (max-width: 37.4375rem) {
+  .rejilla,
+  .pie-columnas { grid-template-columns: 1fr; }
+}
 .pie-enlaces { list-style: none; padding: 0; }
 .pie-enlaces a { display: inline-flex; align-items: center; min-height: var(--area-clic); }
 .pie-aviso {
@@ -271,41 +300,51 @@
   text-align: center;
   font-size: 0.875rem;
 }
-@media (min-width: 48rem) {
-  .pie-columnas { grid-template-columns: repeat(3, 1fr); }
-}
-
 /* ---------- Banner principal (inicio) ---------- */
 /* E11 corregido: banner estático, sin carrusel ni movimiento automático */
+/* B5: corrección 1.4.4 / 1.4.10 — sin altura fija ni posicionamiento absoluto: el texto va en flujo
+   normal dentro de la caja, así que la caja crece con min-height y nunca lo recorta ni lo superpone
+   con el contenido siguiente. La imagen es decorativa (alt=""), por eso se puede ocultar o limitar
+   sin perder información. */
 .banner {
-  position: relative;
+  display: grid;
+  gap: 1rem;
   background: var(--color-primario);
   color: var(--color-sobre-oscuro);
   border-radius: var(--radio);
-  overflow: hidden;
+  padding: 1.25rem 1rem 1.5rem;
+  min-height: var(--area-clic);
 }
-.banner img { width: 100%; }
-/* E10 corregido: el mensaje del banner es texto HTML real, no está dentro de la imagen */
-.banner-texto { padding: 1.25rem 1rem 1.5rem; }
-.banner-texto h2 { color: var(--color-sobre-oscuro); font-size: 1.5rem; margin-bottom: 1rem; }
+/* La ilustración no aporta información (alt=""): se oculta en pantallas angostas para que nunca empuje el texto */
+.banner img { display: none; }
+.banner-texto { min-width: 0; }
+.banner-texto h2 {
+  color: var(--color-sobre-oscuro);
+  font-size: clamp(1.25rem, 1rem + 2vw, 1.5rem);
+  margin-bottom: 1rem;
+  overflow-wrap: anywhere;
+}
 .banner-texto .resaltado { color: var(--color-foco); }
-.banner .boton { background: var(--color-fondo); color: var(--color-primario); border-color: var(--color-fondo); }
+.banner .boton {
+  background: var(--color-fondo);
+  color: var(--color-primario);
+  border-color: var(--color-fondo);
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
 .banner .boton:hover { background: var(--color-primario-claro); color: var(--color-primario-oscuro); }
 
-/* En pantallas anchas el texto va encima de la zona vacía de la imagen */
+/* En pantallas anchas la ilustración vuelve, limitada a una columna aparte, nunca superpuesta al texto */
 @media (min-width: 64rem) {
-  .banner-texto {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 62%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .banner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 22rem);
+    align-items: center;
     padding: 2rem 3rem;
   }
-  .banner-texto h2 { font-size: 2.25rem; }
+  .banner img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: var(--radio); }
+  .banner-texto h2 { font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem); }
 }
 
 /* ---------- Accesos rápidos ---------- */
@@ -417,9 +456,12 @@
 .tabla-contenedor { margin-top: 1rem; }
 
 /* ---------- Preferencias de visualización (barra superior) ---------- */
-.preferencias { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+.preferencias { display: flex; flex-wrap: wrap; gap: 0.375rem; max-width: 100%; }
+/* B5: corrección 1.4.4 / 1.4.10 — min-width: 0 y overflow-wrap para que el botón envuelva su texto en vez de desbordar */
 .boton-pref {
   min-height: var(--area-clic);
+  min-width: 0;
+  max-width: 100%;
   padding: 0.375rem 0.75rem;
   background: var(--color-fondo);
   color: var(--color-primario);
@@ -427,6 +469,8 @@
   border-radius: var(--radio);
   font-size: 0.875rem;
   font-weight: bold;
+  white-space: normal;
+  overflow-wrap: anywhere;
   cursor: pointer;
 }
 .boton-pref:hover { background: var(--color-primario-claro); }
