@@ -31,7 +31,11 @@
   }
 
   let indiceTamano = Math.max(0, TAMANOS.indexOf(Number(leer(CLAVE_TAMANO))));
-  let altoContraste = leer(CLAVE_CONTRASTE) === 'si';
+  const contrasteGuardado = leer(CLAVE_CONTRASTE);
+  /* Sin preferencia guardada, se respeta prefers-contrast: more del sistema */
+  let altoContraste = contrasteGuardado === null
+    ? Boolean(window.matchMedia && window.matchMedia('(prefers-contrast: more)').matches)
+    : contrasteGuardado === 'si';
 
   function aplicar() {
     raiz.style.fontSize = indiceTamano === 0 ? '' : TAMANOS[indiceTamano] + '%';
