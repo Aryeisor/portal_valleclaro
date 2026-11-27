@@ -85,12 +85,12 @@
       <h1>Peticiones, quejas, reclamos, sugerencias y denuncias (PQRS)</h1>
       <p class="intro" id="intro-pqrs">Diligencia el siguiente formulario para radicar tu solicitud ante la Alcaldía de Valleclaro.</p>
 
-      <!-- E18 corregido: aviso de la sesión de 2 minutos antes de empezar -->
-      <p class="nota-sesion" id="nota-sesion">Tienes 2 minutos para diligenciar el formulario. Un minuto antes de que termine el tiempo te avisaremos y podrás pedir más tiempo.</p>
+      <!-- B7 corregido (2.2.1): sesión de 20 minutos; con ?demo=1 en la URL se prueba con tiempos cortos -->
+      <p class="nota-sesion" id="nota-sesion">Tienes 20 minutos para diligenciar el formulario. Un minuto antes de que termine el tiempo te avisaremos y podrás pedir más tiempo sin perder lo que escribiste.</p>
 
-      <!-- Mensaje que aparece si la sesión llega a expirar -->
+      <!-- Mensaje que aparece si nadie respondió al aviso: la sesión se renueva sola, sin borrar nada -->
       <div class="aviso-expirado" id="aviso-expirado" tabindex="-1" hidden>
-        <p>La sesión expiró y por seguridad se borraron los datos del formulario. Puedes volver a diligenciarlo cuando quieras.</p>
+        <p>El tiempo de la sesión se renovó automáticamente. No perdiste lo que escribiste; puedes seguir diligenciando el formulario.</p>
       </div>
 
       <!-- E17 corregido: resumen de errores con enlaces a cada campo; recibe el foco al enviar -->
@@ -271,7 +271,7 @@
       <!-- E18 corregido: aviso accesible antes de que expire la sesión, con opción de pedir más tiempo -->
       <dialog class="aviso-sesion" id="aviso-sesion" role="alertdialog" aria-labelledby="titulo-aviso-sesion" aria-describedby="texto-aviso-sesion">
         <h2 id="titulo-aviso-sesion">Tu sesión está por terminar</h2>
-        <p id="texto-aviso-sesion">Por seguridad, el formulario se borrará en 1 minuto. Si necesitas más tiempo para terminar, pulsa el botón.</p>
+        <p id="texto-aviso-sesion">Por seguridad, la sesión se renovará en 1 minuto. Lo que escribiste no se pierde. Si necesitas más tiempo para terminar, pulsa el botón.</p>
         <p class="cuenta-regresiva" aria-hidden="true">Tiempo restante: <span id="cuenta-regresiva">60</span> segundos</p>
         <button type="button" class="boton" id="mas-tiempo">Necesito más tiempo</button>
       </dialog>

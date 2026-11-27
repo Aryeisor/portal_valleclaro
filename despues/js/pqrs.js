@@ -4,8 +4,10 @@
    adjunto, aviso de sesión y confirmación con radicado.
    ========================================================== */
 
-/* E18 corregido: la sesión dura 2 minutos y se avisa 1 minuto antes de que expire */
-const TIEMPO_SESION_MS = 120000;
+/* B7 corregido (2.2.1): la sesión dura 20 minutos y se avisa 1 minuto antes de que expire.
+   Con ?demo=1 en la URL se usan los tiempos cortos (2 minutos) para poder probar el aviso sin esperar. */
+const ES_DEMO = new URLSearchParams(location.search).get('demo') === '1';
+const TIEMPO_SESION_MS = ES_DEMO ? 120000 : 1200000;
 const AVISO_ANTES_MS = 60000;
 
 (function () {
@@ -477,8 +479,8 @@ const AVISO_ANTES_MS = 60000;
     return segundos + ' segundos';
   }
 
-  textoAviso.textContent = 'Por seguridad, el formulario se borrará en ' + textoTiempo(AVISO_ANTES_MS) +
-    '. Si necesitas más tiempo para terminar, pulsa el botón.';
+  textoAviso.textContent = 'Por seguridad, la sesión se renovará en ' + textoTiempo(AVISO_ANTES_MS) +
+    '. Lo que escribiste no se pierde. Si necesitas más tiempo para terminar, pulsa el botón.';
 
   function detenerSesion() {
     clearTimeout(temporizadorAviso);
@@ -540,15 +542,10 @@ const AVISO_ANTES_MS = 60000;
     extenderSesion();
   });
 
+  /* B7 corregido (3.3.7 / 2.2.1): si nadie responde al aviso, la sesión se renueva sola
+     en vez de borrar lo escrito; no hay límite de tiempo que bloquee ni pierda datos */
   function expirarSesion() {
     cerrarAviso();
-    form.reset();
-    reglas.forEach(limpiarError);
-    aplicarAnonimo();
-    actualizarContador();
-    quitarAdjunto.hidden = true;
-    resumen.hidden = true;
-    intentoEnviar = false;
     avisoExpirado.hidden = false;
     avisoExpirado.focus();
     iniciarSesion();
